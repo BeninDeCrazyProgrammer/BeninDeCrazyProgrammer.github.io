@@ -2,46 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Safiu Benin</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="cv.html">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Navigation (Same as Home) -->
+  <nav class="navbar">
+    <div class="logo">SB.</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-<section class="hero">
-  <h1>About Me</h1>
+  <!-- Page Header (Smaller than Home Hero) -->
+  <header class="page-header">
+    <h1>About Me</h1>
+    <p>Biomedical Engineer | Researcher | Innovator</p>
+  </header>
 
-  <p>
-    I am a Biomedical Engineering undergraduate at the University of Ghana with strong interests in
-    machine learning, medical imaging, biomedical device design, and applied healthcare technologies.
-  </p>
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Bio Section -->
+    <section class="bio-section">
+      <div class="bio-content">
+        <h2>Who I Am</h2>
+        <p>
+          I am a <strong>Biomedical Engineering graduate from the University of Ghana</strong> with a passion for bridging the gap between clinical medicine and modern technology. My work sits at the intersection of <strong>Machine Learning, Medical Imaging, and Device Design</strong>.
+        </p>
+        <p>
+          I enjoy translating complex engineering and computational ideas into practical solutions for real-world healthcare challenges. My academic background has provided me with a strong foundation in cancer image segmentation and telemedicine systems.
+        </p>
+        <p>
+          My long-term goal is to contribute to innovative research and development in biomedical engineering, specifically focusing on how AI can assist in clinical decision support.
+        </p>
+      </div>
+      
+      <!-- Placeholder for your photo -->
+      <div class="bio-image">
+        <img src="https://via.placeholder.com/400x400?text=Safiu+Benin" alt="Safiu Benin Profile">
+      </div>
+    </section>
 
-  <p>
-    My academic and project experience spans cancer image segmentation, CAD-based medical device
-    design, telemedicine systems, and applied biomedical research. I enjoy translating engineering
-    and computational ideas into practical solutions for real-world healthcare challenges.
-  </p>
+    <!-- Current Role Section -->
+    <section class="experience-highlight">
+      <h3>Current Role</h3>
+      <div class="role-card">
+        <h4>National Service Personnel</h4>
+        <div class="role-meta">Accra Psychiatric Hospital | Accra, Ghana</div>
+        <p>
+          I am currently gaining exposure to clinical environments and biomedical equipment in a mental health setting. This experience is shaping my interest in technology-driven solutions for mental health care.
+        </p>
+      </div>
+    </section>
 
-  <p>
-    I am currently undertaking my National Service at the Accra Psychiatric Hospital, where I am
-    gaining exposure to clinical environments, healthcare systems, and biomedical equipment in a
-    mental health setting. This experience is shaping my interest in technology-driven solutions
-    for mental health care and clinical decision support.
-  </p>
+    <!-- Skills Section -->
+    <section class="skills-section">
+      <h3>Technical Expertise</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Engineering</h4>
+          <ul>
+            <li>Medical Device Design</li>
+            <li>CAD (SolidWorks/Fusion 360)</li>
+            <li>Biomedical Instrumentation</li>
+            <li>Circuit Design</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Data & AI</h4>
+          <ul>
+            <li>Machine Learning</li>
+            <li>Medical Image Segmentation</li>
+            <li>Python (PyTorch/TensorFlow)</li>
+            <li>Data Analysis</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Research</h4>
+          <ul>
+            <li>Telemedicine Systems</li>
+            <li>Clinical Workflow Analysis</li>
+            <li>Technical Writing</li>
+            <li>Healthcare IT</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    My long-term goal is to contribute to innovative research and development in biomedical
-    engineering, particularly at the intersection of machine learning, medical imaging, and
-    healthcare systems.
-  </p>
-</section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
