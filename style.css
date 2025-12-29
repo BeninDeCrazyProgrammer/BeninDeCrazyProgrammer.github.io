@@ -1,33 +1,173 @@
+/* --- RESET & BASICS --- */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5f7fa;
+  background: #f8f9fa;
   color: #333;
+  line-height: 1.6;
 }
 
-nav {
-  background: #0b3c5d;
-  padding: 15px;
-  text-align: center;
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 0;
 }
 
-nav a {
+/* --- NAVIGATION --- */
+nav.navbar {
+  background: #0b3c5d; /* Your original blue */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
   color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #fff;
+  border-bottom: 2px solid #328cc1; /* Lighter blue accent */
+}
+
+/* --- HERO SECTION --- */
 .hero {
-  padding: 80px;
+  /* Linear gradient for a modern tech/medical look */
+  background: linear-gradient(135deg, #0b3c5d 0%, #328cc1 100%);
+  color: white;
+  min-height: 85vh; /* Takes up most of the screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #d9ecf7; /* Soft blue-white */
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #eee;
+}
+
+.role {
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* --- BUTTONS --- */
+.cta-group {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+  margin: 0 10px;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #0b3c5d;
+}
+
+.btn-primary:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #0b3c5d;
+  transform: translateY(-3px);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #062338; /* Darker shade of nav */
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  nav.navbar {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    margin-top: 15px;
+  }
+  
+  .nav-links a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
 }
