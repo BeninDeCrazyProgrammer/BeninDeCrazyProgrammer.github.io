@@ -2,59 +2,247 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Safiu Benin</title>
+  
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="cv.html">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">SB.</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-<section class="hero">
-  <h1>Projects</h1>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Engineering Portfolio</h1>
+    <p>Selected works in Medical Device Design and Machine Learning.</p>
+  </header>
 
-  <h2>Machine Learning & Medical Imaging</h2>
-  <ul>
-    <li>
-      <strong>Automated Segmentation and Classification of Breast Cancer Tumors</strong><br>
-      Deep learning-based segmentation and classification of tumor masses and calcifications using
-      INBreast and CBIS-DDSM datasets.
-    </li>
-  </ul>
+  <!-- Main Projects Container -->
+  <main class="container">
 
-  <h2>Biomedical Device Design</h2>
-  <ul>
-    <li>
-      <strong>Mobile IV Delivery System</strong><br>
-      Designed a mobile IV delivery system to enhance patient mobility using CAD and FEA analysis.
-    </li>
-    <li>
-      <strong>Adjustable Ankle Orthotic Shoe Lift</strong><br>
-      Designed an adjustable orthotic device for patients with leg-length inequality.
-    </li>
-  </ul>
+    <!-- PROJECT 1: Final Year Project (Most Important) -->
+    <article class="project-card">
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>Breast Cancer Tumor Segmentation</h2>
+          <span class="project-type">Final Year Capstone</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">Python</span>
+          <span class="badge">PyTorch</span>
+          <span class="badge">Computer Vision</span>
+        </div>
+      </div>
 
-  <h2>Telemedicine & Instrumentation</h2>
-  <ul>
-    <li>
-      <strong>SMS-Enabled Telemetry System for Febrile Hypoxia</strong><br>
-      Developed a low-cost Arduino-based telemetry system with SMS alerts.
-    </li>
-  </ul>
+      <div class="project-visuals">
+        <!-- Image 1: The Result (e.g., Segmented Scan) -->
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Segmentation+Output" alt="Tumor Segmentation Mask">
+          <p class="caption">Model output showing tumor segmentation mask.</p>
+        </div>
+        <!-- Image 2: The Code/Architecture -->
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Model+Architecture" alt="U-Net Architecture or Code">
+          <p class="caption">U-Net architecture implemented in PyTorch.</p>
+        </div>
+      </div>
 
-  <h2>Applied Research & Engineering Studies</h2>
-  <ul>
-    <li>
-      <strong>Refrigeration System Benchmarking for Mortuary Applications</strong><br>
-      Benchmarked and modeled refrigeration systems for Everlasting Morgue Consortium.
-    </li>
-  </ul>
-</section>
+      <div class="project-desc">
+        <h3>Project Overview</h3>
+        <p>
+          Developed an automated deep learning model to segment and classify tumor masses and calcifications in mammograms using the INBreast and CBIS-DDSM datasets. The model was deployed via a web application to serve as a clinical decision support tool for radiologists.
+        </p>
+        <div class="project-links">
+          <a href="#" class="btn-text"><i class="fab fa-github"></i> View Code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 2: TLSO Brace -->
+    <article class="project-card">
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>TLSO - CASH Brace Design</h2>
+          <span class="project-type">Orthotics & Prosthetics</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">SolidWorks</span>
+          <span class="badge">Fusion 360</span>
+          <span class="badge">Reverse Engineering</span>
+        </div>
+      </div>
+
+      <div class="project-visuals">
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=CASH+Brace+Render" alt="CASH Brace 3D Render">
+          <p class="caption">Full 3D assembly of the Cruciform Anterior Spinal Hyperextension brace.</p>
+        </div>
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Technical+Drawing" alt="Orthotic Sketch">
+          <p class="caption">Exploded view showing mechanical adjustment mechanisms.</p>
+        </div>
+      </div>
+
+      <div class="project-desc">
+        <h3>Project Overview</h3>
+        <p>
+          Reverse-engineered a Cruciform Anterior Spinal Hyperextension (CASH) brace used for spinal stabilization. Created accurate 3D models in SolidWorks and Fusion 360 to analyze the mechanical structure and improve fitting adjustability.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJECT 3: Telemetry System -->
+    <article class="project-card">
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>SMS Telemetry for Febrile Hypoxia</h2>
+          <span class="project-type">Medical Telemedicine</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">Arduino</span>
+          <span class="badge">IoT</span>
+          <span class="badge">Hubtel API</span>
+        </div>
+      </div>
+
+      <div class="project-visuals">
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Circuit+Diagram" alt="Arduino Circuit">
+          <p class="caption">Microcontroller circuit integration for pulse oximetry data.</p>
+        </div>
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Device+Housing" alt="Device Enclosure CAD">
+          <p class="caption">3D printed housing designed to protect electronics.</p>
+        </div>
+      </div>
+
+      <div class="project-desc">
+        <h3>Project Overview</h3>
+        <p>
+          Designed a low-cost remote monitoring system that detects febrile hypoxia. Programmed an Arduino to read physiological data and utilized the Hubtel API to send SMS alerts to caregivers, ensuring timely intervention in resource-poor settings.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJECT 4: Refrigeration Benchmarking -->
+    <article class="project-card">
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>Morgue Refrigeration System Study</h2>
+          <span class="project-type">Biomedical Systems</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">SolidWorks</span>
+          <span class="badge">Excel Analysis</span>
+          <span class="badge">HVAC</span>
+        </div>
+      </div>
+
+      <div class="project-visuals">
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=CAD+Model" alt="Refrigeration Unit CAD">
+          <p class="caption">Proposed layout for the Everlasting Morgue Consortium.</p>
+        </div>
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Benchmark+Data" alt="Comparison Chart">
+          <p class="caption">Benchmarking matrix comparing energy efficiency of top brands.</p>
+        </div>
+      </div>
+
+      <div class="project-desc">
+        <h3>Project Overview</h3>
+        <p>
+          Conducted a technical benchmarking study on industrial refrigeration systems. Analyzed cooling capacity and power consumption to recommend optimal brands, delivering detailed CAD layouts for the installation.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJECT 5: Orthotic Shoe Lift -->
+    <article class="project-card">
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>Adjustable Orthotic Shoe Lift</h2>
+          <span class="project-type">Rehabilitation Engineering</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">SolidWorks</span>
+          <span class="badge">FEA Simulation</span>
+          <span class="badge">3D Printing</span>
+        </div>
+      </div>
+
+      <div class="project-visuals">
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Shoe+Lift+Design" alt="Orthotic Design">
+          <p class="caption">Adjustable mechanism to correct Leg Length Inequality (LLI).</p>
+        </div>
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Stress+Analysis" alt="FEA Heatmap">
+          <p class="caption">Finite Element Analysis (FEA) testing load distribution.</p>
+        </div>
+      </div>
+
+      <div class="project-desc">
+        <h3>Project Overview</h3>
+        <p>
+          Designed a customizable shoe lift for patients with Leg Length Inequality. Performed material selection and Finite Element Analysis (FEA) to ensure the device could withstand daily walking stresses while maintaining patient comfort.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJECT 6: Mobile IV System -->
+    <article class="project-card">
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>Mobile IV Delivery System</h2>
+          <span class="project-type">Biomaterials & Design</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">Fusion 360</span>
+          <span class="badge">Product Design</span>
+          <span class="badge">Ergonomics</span>
+        </div>
+      </div>
+
+      <div class="project-visuals">
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=IV+Pole+Render" alt="IV System Render">
+          <p class="caption">Enhanced mobility design for patient IV delivery.</p>
+        </div>
+        <div class="visual-item">
+          <img src="https://via.placeholder.com/600x400?text=Prototyping" alt="Design Process">
+          <p class="caption">Iterative mock-ups focused on stability and ease of use.</p>
+        </div>
+      </div>
+
+      <div class="project-desc">
+        <h3>Project Overview</h3>
+        <p>
+          Designed an improved IV pole system focused on patient stability and mobility. Utilized the engineering design process from concept sketches in Fusion 360 to FEA validation, addressing common issues with tipping and transport.
+        </p>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
