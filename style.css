@@ -528,3 +528,166 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* =========================================
+   ADD TO BOTTOM OF STYLE.CSS (PROJECTS PAGE)
+   ========================================= */
+
+/* --- PROJECT CARD CONTAINER --- */
+.project-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden; /* Keeps images inside rounded corners */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  margin-bottom: 60px; /* Space between projects */
+  border: 1px solid #eef4f8;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* --- PROJECT HEADER --- */
+.project-header {
+  padding: 25px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.project-meta h2 {
+  margin: 0;
+  color: #0b3c5d;
+  font-size: 1.5rem;
+}
+
+.project-type {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* --- TECH BADGES --- */
+.tech-stack {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #eef4f8;
+  color: #0b3c5d;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: 1px solid #dae7f0;
+}
+
+/* --- VISUALS GRID (Two Images) --- */
+.project-visuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50/50 split */
+  gap: 2px; /* Tiny gap between images */
+  background: #f0f0f0;
+}
+
+.visual-item {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.visual-item img {
+  width: 100%;
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures image fills the box without stretching */
+  display: block;
+  transition: transform 0.3s;
+}
+
+.visual-item:hover img {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Caption Overlay (Optional: appears on hover or stays at bottom) */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 15px;
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s;
+}
+
+.visual-item:hover .caption {
+  opacity: 1; /* Show on hover */
+}
+
+/* --- DESCRIPTION AREA --- */
+.project-desc {
+  padding: 25px;
+}
+
+.project-desc h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-desc p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* --- TEXT LINKS --- */
+.btn-text {
+  color: #328cc1;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+  color: #0b3c5d;
+}
+
+/* --- RESPONSIVE PROJECTS --- */
+@media (max-width: 768px) {
+  .project-header {
+    flex-direction: column;
+  }
+  
+  .tech-stack {
+    margin-top: 10px;
+  }
+  
+  .project-visuals {
+    grid-template-columns: 1fr; /* Stack images on mobile */
+  }
+  
+  .visual-item img {
+    height: 250px; /* Shorter images on mobile */
+  }
+  
+  .caption {
+    opacity: 1; /* Always show caption on mobile */
+    position: relative;
+    background: #333;
+  }
+}
