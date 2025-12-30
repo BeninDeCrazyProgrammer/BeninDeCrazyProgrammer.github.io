@@ -298,3 +298,119 @@ footer {
   .bio-image img { max-width: 250px; }
   .page-header h1 { font-size: 2rem; }
 }
+/* =========================================
+   ADD TO BOTTOM OF STYLE.CSS
+   ========================================= */
+
+/* --- CONTACT PAGE LAYOUT --- */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 50px;
+  margin-top: 20px;
+}
+
+/* --- LEFT COLUMN: INFO CARDS --- */
+.contact-info p {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.info-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  border-left: 4px solid #328cc1;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.info-value a {
+  color: #0b3c5d;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.info-value a:hover {
+  color: #328cc1;
+  text-decoration: underline;
+}
+
+/* --- RIGHT COLUMN: FORM --- */
+.contact-form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-form-container h2 {
+  color: #0b3c5d;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #328cc1;
+  box-shadow: 0 0 5px rgba(50, 140, 193, 0.2);
+}
+
+.submit-btn {
+  width: 100%;
+  border: none;
+  background-color: #0b3c5d; /* Dark Blue */
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #328cc1; /* Lighter Blue on hover */
+  color: white;
+}
+
+/* --- RESPONSIVE CONTACT --- */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr; /* Stack columns on mobile */
+    gap: 30px;
+  }
+}
