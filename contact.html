@@ -2,47 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Safiu Benin</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="cv.html">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">SB.</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
 
-<section class="hero">
-  <h1>Contact</h1>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Get in Touch</h1>
+    <p>Let's collaborate on the next healthcare innovation.</p>
+  </header>
 
-  <p>
-    I’m open to research collaboration, project discussions, and professional opportunities.
-    Feel free to reach out.
-  </p>
+  <!-- Main Content -->
+  <main class="container">
+    
+    <div class="contact-wrapper">
+      
+      <!-- Left Column: Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>I am open to research collaborations, project discussions, and professional opportunities in Biomedical Engineering and AI.</p>
+        
+        <div class="info-card">
+          <div class="info-label">Email</div>
+          <div class="info-value">
+            <a href="mailto:safiubenin@gmail.com">safiubenin@gmail.com</a>
+          </div>
+        </div>
 
-  <p><strong>Email:</strong> safiubenin@gmail.com</p>
-  <p><strong>Location:</strong> Accra, Ghana</p>
+        <div class="info-card">
+          <div class="info-label">Location</div>
+          <div class="info-value">Accra, Ghana</div>
+        </div>
 
-  <p>
-    <strong>GitHub:</strong>
-    <a href="https://github.com/BeninDeCrazyProgrammer" target="_blank">
-      github.com/BeninDeCrazyProgrammer
-    </a>
-  </p>
+        <div class="info-card">
+          <div class="info-label">Socials</div>
+          <div class="info-value">
+            <a href="https://github.com/BeninDeCrazyProgrammer" target="_blank" class="social-link">GitHub Profile</a>
+            <!-- Uncomment when you have LinkedIn
+            <a href="#" class="social-link">LinkedIn</a> 
+            -->
+          </div>
+        </div>
+      </div>
 
-  <!-- Optional: Add LinkedIn later -->
-  <!--
-  <p>
-    <strong>LinkedIn:</strong>
-    <a href="https://linkedin.com/in/yourprofile" target="_blank">
-      linkedin.com/in/yourprofile
-    </a>
-  </p>
-  -->
-</section>
+      <!-- Right Column: Contact Form -->
+      <div class="contact-form-container">
+        <h2>Send a Message</h2>
+        <!-- This form opens the user's email client when submitted -->
+        <form action="mailto:safiubenin@gmail.com" method="post" enctype="text/plain" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we collaborate?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
