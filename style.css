@@ -1,4 +1,6 @@
-/* --- RESET & BASICS --- */
+/* =========================================
+   1. RESET & BASICS
+   ========================================= */
 * {
   box-sizing: border-box;
 }
@@ -12,12 +14,14 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
   margin-top: 0;
 }
 
-/* --- NAVIGATION --- */
+/* =========================================
+   2. NAVIGATION (Sticky Top)
+   ========================================= */
 nav.navbar {
   background: #0b3c5d; /* Your original blue */
   padding: 1rem 2rem;
@@ -53,12 +57,13 @@ nav.navbar {
   border-bottom: 2px solid #328cc1; /* Lighter blue accent */
 }
 
-/* --- HERO SECTION --- */
+/* =========================================
+   3. HERO SECTION (Only for Home)
+   ========================================= */
 .hero {
-  /* Linear gradient for a modern tech/medical look */
   background: linear-gradient(135deg, #0b3c5d 0%, #328cc1 100%);
   color: white;
-  min-height: 85vh; /* Takes up most of the screen height */
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +84,7 @@ nav.navbar {
 .subtitle {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #d9ecf7; /* Soft blue-white */
+  color: #d9ecf7;
   margin-bottom: 20px;
 }
 
@@ -95,89 +100,15 @@ nav.navbar {
   margin-bottom: 40px;
 }
 
-/* --- BUTTONS --- */
-.cta-group {
-  margin-top: 30px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s, background 0.3s;
-  margin: 0 10px;
-}
-
-.btn-primary {
-  background-color: #ffffff;
-  color: #0b3c5d;
-}
-
-.btn-primary:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 2px solid white;
-  color: white;
-}
-
-.btn-outline:hover {
-  background-color: white;
-  color: #0b3c5d;
-  transform: translateY(-3px);
-}
-
-/* --- FOOTER --- */
-footer {
-  background: #062338; /* Darker shade of nav */
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-/* --- ANIMATION --- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  nav.navbar {
-    flex-direction: column;
-  }
-  
-  .nav-links {
-    margin-top: 15px;
-  }
-  
-  .nav-links a {
-    margin: 0 10px;
-    font-size: 0.9rem;
-  }
-  
-  .btn {
-    display: block;
-    margin: 10px auto;
-    width: 80%;
-  }
-}
-
-/* --- PAGE HEADERS (For About, Projects, etc.) --- */
+/* =========================================
+   4. PAGE HEADERS (For About, Projects, etc)
+   ========================================= */
 .page-header {
   background: #0b3c5d;
   color: white;
   text-align: center;
   padding: 60px 20px;
+  border-bottom: 5px solid #328cc1;
 }
 
 .page-header h1 {
@@ -186,37 +117,44 @@ footer {
 }
 
 .page-header p {
-  opacity: 0.8;
+  opacity: 0.9;
   font-size: 1.1rem;
 }
 
-/* --- MAIN CONTAINER --- */
+/* =========================================
+   5. GENERAL LAYOUT
+   ========================================= */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
-/* --- BIO SECTION --- */
+/* =========================================
+   6. ABOUT PAGE COMPONENTS
+   ========================================= */
+
+/* Top Bio Section */
 .bio-section {
   display: flex;
-  align-items: center; /* Vertically centers text with image */
+  align-items: center; 
   gap: 50px;
   margin-bottom: 60px;
+  background: white; /* Ensures text is readable */
 }
 
-.bio-content {
+.bio-text, .bio-content {
   flex: 1;
 }
 
-.bio-content h2 {
+.bio-text h2, .bio-content h2 {
   color: #0b3c5d;
-  border-bottom: 3px solid #328cc1;
-  display: inline-block;
-  padding-bottom: 5px;
+  border-left: 5px solid #328cc1;
+  padding-left: 15px;
   margin-bottom: 20px;
 }
 
+/* Profile Image */
 .bio-image {
   flex: 1;
   display: flex;
@@ -226,19 +164,23 @@ footer {
 .bio-image img {
   width: 100%;
   max-width: 350px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Nice shadow depth */
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   border: 5px solid white;
 }
 
-/* --- EXPERIENCE HIGHLIGHT --- */
-.experience-highlight {
-  background: white;
+/* Experience Box */
+.experience-box, .experience-highlight {
+  background: #eef4f8; /* Very light blue */
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #d1e3ef;
   margin-bottom: 60px;
-  border-left: 5px solid #328cc1;
+}
+
+.experience-box h3, .experience-highlight h3 {
+  color: #0b3c5d;
+  margin-bottom: 15px;
 }
 
 .role-meta {
@@ -248,9 +190,10 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- SKILLS SECTION --- */
-.skills-section h3, 
-.experience-highlight h3 {
+/* =========================================
+   7. SKILLS SECTION
+   ========================================= */
+.skills-section h3 {
   color: #0b3c5d;
   font-size: 1.8rem;
   margin-bottom: 30px;
@@ -289,7 +232,6 @@ footer {
   position: relative;
 }
 
-/* Add a cool bullet point */
 .skill-category li::before {
   content: "•";
   color: #328cc1;
@@ -298,14 +240,61 @@ footer {
   left: 0;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS FOR ABOUT --- */
+/* =========================================
+   8. COMPONENTS (Buttons, Footer)
+   ========================================= */
+.cta-group { margin-top: 30px; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+  margin: 0 10px;
+}
+
+.btn-primary { background-color: #ffffff; color: #0b3c5d; }
+.btn-primary:hover { background-color: #f0f0f0; transform: translateY(-3px); }
+
+.btn-outline { border: 2px solid white; color: white; }
+.btn-outline:hover { background-color: white; color: #0b3c5d; transform: translateY(-3px); }
+
+footer {
+  background: #062338;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   9. MOBILE RESPONSIVENESS
+   ========================================= */
 @media (max-width: 768px) {
+  /* Home */
+  .hero h1 { font-size: 2.5rem; }
+  
+  /* Nav */
+  nav.navbar { flex-direction: column; }
+  .nav-links { margin-top: 15px; }
+  .nav-links a { margin: 0 10px; font-size: 0.9rem; }
+  
+  /* Buttons */
+  .btn { display: block; margin: 10px auto; width: 80%; }
+  
+  /* About Page */
   .bio-section {
     flex-direction: column-reverse; /* Puts image on top on mobile */
     text-align: center;
   }
-  
-  .bio-image img {
-    max-width: 250px;
-  }
+  .bio-image img { max-width: 250px; }
+  .page-header h1 { font-size: 2rem; }
 }
