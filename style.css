@@ -414,3 +414,117 @@ footer {
     gap: 30px;
   }
 }
+
+/* =========================================
+   ADD TO BOTTOM OF STYLE.CSS (CV PAGE)
+   ========================================= */
+
+/* --- CV PREVIEW CARD --- */
+.cv-preview-card {
+  background: white;
+  max-width: 800px; /* Limits width for better reading */
+  margin: 0 auto;   /* Centers the card */
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft shadow */
+  text-align: center;
+}
+
+/* --- SUMMARY TEXT --- */
+.cv-summary {
+  margin-bottom: 40px;
+}
+
+.cv-summary h2 {
+  color: #0b3c5d;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cv-summary p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
+  line-height: 1.8;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- DIVIDER --- */
+.divider {
+  border: 0;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 40px 0;
+}
+
+/* --- HIGHLIGHTS GRID --- */
+.cv-highlights {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.highlight-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.highlight-item i {
+  font-size: 2rem;
+  color: #328cc1;
+  margin-bottom: 15px;
+}
+
+.highlight-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.highlight-item p {
+  font-weight: 700;
+  color: #0b3c5d;
+  margin-bottom: 0;
+}
+
+.highlight-sub {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* --- DOWNLOAD AREA --- */
+.cv-download-area {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e0;
+}
+
+.cv-download-area p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.btn-large {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+}
+
+/* --- RESPONSIVE CV --- */
+@media (max-width: 768px) {
+  .cv-preview-card {
+    padding: 30px 20px;
+  }
+  
+  .cv-highlights {
+    flex-direction: column;
+  }
+  
+  .cv-summary h2 {
+    font-size: 1.5rem;
+  }
+}
