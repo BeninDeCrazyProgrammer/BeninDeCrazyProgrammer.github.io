@@ -533,286 +533,172 @@ footer {
    ADD TO BOTTOM OF STYLE.CSS (PROJECTS PAGE)
    ========================================= */
 
-/* --- PROJECT CARD CONTAINER --- */
-.project-card {
+/* =========================================
+   REPLACE THE PREVIOUS CAD SECTION WITH THIS
+   ========================================= */
+
+/* --- CAD DETAILED CARD --- */
+.cad-detailed-card {
+  display: flex;
+  flex-direction: column;
   background: white;
-  border-radius: 10px;
-  overflow: hidden; /* Keeps images inside rounded corners */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  margin-bottom: 60px; /* Space between projects */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  margin-bottom: 60px;
   border: 1px solid #eef4f8;
-  transition: transform 0.3s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-5px); /* Subtle lift effect */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+/* --- CONTENT GRID --- */
+.cad-content-grid {
+  display: grid;
+  /* Changed to equal 50/50 split for better PC balance */
+  grid-template-columns: 1fr 1fr; 
+  gap: 0;
+  min-height: 500px; /* Ensures the card has substantial presence */
 }
 
-/* --- PROJECT HEADER --- */
-.project-header {
-  padding: 25px;
-  border-bottom: 1px solid #f0f0f0;
+/* --- TEXT SIDE --- */
+.cad-text {
+  /* INCREASED PADDING: This fixes the "no space at sides" issue */
+  padding: 50px; 
+  background: white;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text */
+}
+
+.cad-text h3 {
+  font-size: 1.25rem;
+  color: #0b3c5d;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eef4f8;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.cad-text h3:first-of-type {
+  margin-top: 0;
+}
+
+.cad-text i {
+  color: #328cc1;
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.cad-text p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Specs List - Cleaner Look */
+.specs-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  background: #fafafa; /* Subtle background for data */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.specs-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #666;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 15px;
 }
 
-.project-meta h2 {
-  margin: 0;
-  color: #0b3c5d;
-  font-size: 1.5rem;
+.specs-list li:last-child {
+  border-bottom: none;
 }
 
-.project-type {
+.specs-list li strong {
+  color: #333;
+}
+
+/* Material Rationale Box */
+.material-rationale {
+  background: #f0f7fb;
+  border-left: 4px solid #328cc1;
+  padding: 20px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+.material-rationale strong {
   display: block;
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 5px;
-  font-weight: 600;
-}
-
-/* --- TECH BADGES --- */
-.tech-stack {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  background: #eef4f8;
+  margin-bottom: 8px;
   color: #0b3c5d;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  border: 1px solid #dae7f0;
 }
 
-/* --- VISUALS GRID (Two Images) --- */
-.project-visuals {
+.material-rationale p {
+  margin: 0;
+  color: #444;
+}
+
+/* --- GALLERY SIDE (The Fix for Zoomed Images) --- */
+.cad-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 50/50 split */
-  gap: 2px; /* Tiny gap between images */
-  background: #f0f0f0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr; /* Top row (main image) is 2x taller */
+  gap: 4px;
+  background: #f4f4f4;
+  padding: 4px; /* Creates a small frame around images */
 }
 
+/* Visual Item Container */
 .visual-item {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
-  background: #ddd;
 }
 
+/* The Image Fix */
 .visual-item img {
   width: 100%;
-  height: 300px; /* Fixed height for consistency */
-  object-fit: cover; /* Ensures image fills the box without stretching */
-  display: block;
-  transition: transform 0.3s;
+  height: 100%;
+  /* CHANGED: This stops the image from being cut off/zoomed in */
+  object-fit: contain; 
+  padding: 15px; /* Adds whitespace so drawing isn't touching edge */
 }
 
-.visual-item:hover img {
-  transform: scale(1.05); /* Zoom effect on hover */
+.large-visual {
+  grid-column: 1 / -1; /* Spans full width */
+  grid-row: 1;
 }
 
-/* Caption Overlay (Optional: appears on hover or stays at bottom) */
-.caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 8px 15px;
-  margin: 0;
-  font-size: 0.85rem;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s;
+/* --- CAD FOOTER --- */
+.cad-footer {
+  background: #f9f9f9;
+  padding: 20px 50px;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.visual-item:hover .caption {
-  opacity: 1; /* Show on hover */
-}
-
-/* --- DESCRIPTION AREA --- */
-.project-desc {
-  padding: 25px;
-}
-
-.project-desc h3 {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.project-desc p {
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-/* --- TEXT LINKS --- */
-.btn-text {
-  color: #328cc1;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.btn-text:hover {
-  text-decoration: underline;
-  color: #0b3c5d;
-}
-
-/* --- RESPONSIVE PROJECTS --- */
-@media (max-width: 768px) {
-  .project-header {
-    flex-direction: column;
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .cad-content-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
   }
   
-  .tech-stack {
-    margin-top: 10px;
+  .cad-text {
+    padding: 30px; /* Slightly less padding on mobile */
+    border-right: none;
+    border-bottom: 1px solid #eee;
   }
   
-  .project-visuals {
-    grid-template-columns: 1fr; /* Stack images on mobile */
-  }
-  
-  .visual-item img {
-    height: 250px; /* Shorter images on mobile */
-  }
-  
-  .caption {
-    opacity: 1; /* Always show caption on mobile */
-    position: relative;
-    background: #333;
+  .cad-gallery {
+    grid-template-rows: 300px 150px; /* Fixed heights for mobile stability */
   }
 }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAD Models | Safiu Benin</title>
-  
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Navigation -->
-  <!-- Note: I added 'CAD Models' to the links list -->
-  <nav class="navbar">
-    <div class="logo">SB.</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="cad-models.html" class="active">CAD Models</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header">
-    <h1>CAD Library</h1>
-    <p>Parametric Modeling & Design for Manufacturability (DFM)</p>
-  </header>
-
-  <!-- Main Container -->
-  <main class="container">
-
-    <!-- CAD ENTRY 1: Centrifuge Tube -->
-    <article class="project-card cad-detailed-card">
-      
-      <!-- Header -->
-      <div class="project-header">
-        <div class="project-meta">
-          <h2>Parametric Centrifuge Tube</h2>
-          <span class="project-type">Injection Molding Design</span>
-        </div>
-        <div class="tech-stack">
-          <span class="badge">SolidWorks</span>
-          <span class="badge">Parametric Modeling</span>
-          <span class="badge">DFM</span>
-        </div>
-      </div>
-
-      <div class="cad-content-grid">
-        
-        <!-- Left Column: Technical Data -->
-        <div class="cad-text">
-          <h3><i class="fas fa-drafting-compass"></i> Modeling Approach</h3>
-          <p>
-            The tube body was created using a <strong>revolved profile</strong> to ensure consistent wall thickness and rotational symmetry. A centerline was used as the axis of revolution, with inner and outer profiles fully constrained to define a uniform <strong>2 mm wall thickness</strong>.
-          </p>
-          <p>
-            The curved base was generated using tangent arcs to replicate standard geometry. The top lip was modeled as a separate feature with a gripping interface, utilizing fillets to reduce stress concentrations.
-          </p>
-
-          <h3><i class="fas fa-ruler-combined"></i> Key Specifications</h3>
-          <ul class="specs-list">
-            <li><strong>Outer Diameter:</strong> 17 mm</li>
-            <li><strong>Inner Diameter:</strong> 15 mm</li>
-            <li><strong>Total Length:</strong> 80 mm</li>
-            <li><strong>Wall Thickness:</strong> 2 mm</li>
-            <li><strong>Material:</strong> Polypropylene Copolymer (PP-co)</li>
-          </ul>
-
-          <div class="material-rationale">
-            <strong>Material Selection Rationale:</strong>
-            <p>PP-co was selected for its high chemical resistance, durability, and standard application in laboratory consumables.</p>
-          </div>
-        </div>
-
-        <!-- Right Column: Gallery (3 Images based on PDF) -->
-        <div class="cad-gallery">
-          
-          <!-- Image 1: Isometric -->
-          <div class="visual-item large-visual">
-            <img src="https://via.placeholder.com/800x600?text=Isometric+Render" alt="Isometric Render of Centrifuge Tube">
-            <p class="caption">Isometric render showing matte, cool-toned appearance.</p>
-          </div>
-
-          <!-- Image 2: Section View -->
-          <div class="visual-item">
-            <img src="https://via.placeholder.com/400x300?text=Section+View" alt="Section View showing wall thickness">
-            <p class="caption">Section view highlighting uniform wall thickness & curved base.</p>
-          </div>
-
-          <!-- Image 3: Sketch -->
-          <div class="visual-item">
-            <img src="https://via.placeholder.com/400x300?text=Revolved+Profile+Sketch" alt="Fully Defined Sketch">
-            <p class="caption">Fully defined sketch showing design intent.</p>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Skills Footer -->
-      <div class="cad-footer">
-        <strong>Demonstrated Skills:</strong> Revolved features, Sketch constraints, Dimension-driven design, Material assignment, Visualization.
-      </div>
-
-    </article>
-
-    <!-- You can duplicate the <article> block above to add more models later -->
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
