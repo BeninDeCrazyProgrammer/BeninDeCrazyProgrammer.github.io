@@ -532,9 +532,8 @@ footer {
 /* =========================================
    ADD TO BOTTOM OF STYLE.CSS (PROJECTS PAGE)
    ========================================= */
-
 /* =========================================
-   REPLACE THE PREVIOUS CAD SECTION WITH THIS
+   REPLACE THE PREVIOUS CAD SECTION WITH THIS FINAL VERSION
    ========================================= */
 
 /* --- CAD DETAILED CARD --- */
@@ -542,9 +541,9 @@ footer {
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   margin-bottom: 60px;
   border: 1px solid #eef4f8;
 }
@@ -552,153 +551,139 @@ footer {
 /* --- CONTENT GRID --- */
 .cad-content-grid {
   display: grid;
-  /* Changed to equal 50/50 split for better PC balance */
-  grid-template-columns: 1fr 1fr; 
-  gap: 0;
-  min-height: 500px; /* Ensures the card has substantial presence */
+  grid-template-columns: 40% 60%; /* Text 40%, Images 60% */
+  min-height: 500px;
 }
 
 /* --- TEXT SIDE --- */
 .cad-text {
-  /* INCREASED PADDING: This fixes the "no space at sides" issue */
-  padding: 50px; 
+  padding: 40px;
   background: white;
-  border-right: 1px solid #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertically centers the text */
+  border-right: 1px solid #eee;
+  font-size: 0.95rem;
 }
 
 .cad-text h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #0b3c5d;
   margin-top: 25px;
   margin-bottom: 15px;
   border-bottom: 2px solid #eef4f8;
   padding-bottom: 8px;
-  display: flex;
-  align-items: center;
 }
 
-.cad-text h3:first-of-type {
-  margin-top: 0;
-}
+.cad-text h3:first-of-type { margin-top: 0; }
 
-.cad-text i {
-  color: #328cc1;
-  margin-right: 12px;
-  font-size: 1.1rem;
-}
+.cad-text i { color: #328cc1; margin-right: 8px; }
 
-.cad-text p {
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-/* Specs List - Cleaner Look */
+/* Specs List */
 .specs-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 30px;
-  background: #fafafa; /* Subtle background for data */
+  margin-bottom: 25px;
+  background: #fafafa;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid #eee;
 }
 
 .specs-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 0.95rem;
-  color: #666;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
+  color: #555;
 }
 
-.specs-list li:last-child {
-  border-bottom: none;
-}
+.specs-list li:last-child { border-bottom: none; }
+.specs-list li strong { color: #333; }
 
-.specs-list li strong {
-  color: #333;
-}
-
-/* Material Rationale Box */
+/* Material Rationale */
 .material-rationale {
   background: #f0f7fb;
   border-left: 4px solid #328cc1;
-  padding: 20px;
-  font-size: 0.95rem;
+  padding: 15px;
   border-radius: 4px;
 }
 
-.material-rationale strong {
-  display: block;
-  margin-bottom: 8px;
-  color: #0b3c5d;
-}
+.material-rationale strong { display: block; margin-bottom: 5px; color: #0b3c5d; }
+.material-rationale p { margin: 0; color: #444; }
 
-.material-rationale p {
-  margin: 0;
-  color: #444;
-}
 
-/* --- GALLERY SIDE (The Fix for Zoomed Images) --- */
+/* --- GALLERY SIDE (Fixed Layout) --- */
 .cad-gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr; /* Top row (main image) is 2x taller */
-  gap: 4px;
   background: #f4f4f4;
-  padding: 4px; /* Creates a small frame around images */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: auto auto;  /* Two rows that fit content */
+  gap: 10px;
+  padding: 10px;
 }
 
-/* Visual Item Container */
-.visual-item {
+/* Visual Item: Forces Image Top, Caption Bottom */
+.cad-gallery .visual-item {
   background: white;
+  border: 1px solid #ddd;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  flex-direction: column; /* STACKS VERTICALLY */
+  height: 100%; 
 }
 
-/* The Image Fix */
-.visual-item img {
+/* The Image Itself */
+.cad-gallery .visual-item img {
   width: 100%;
-  height: 100%;
-  /* CHANGED: This stops the image from being cut off/zoomed in */
-  object-fit: contain; 
-  padding: 15px; /* Adds whitespace so drawing isn't touching edge */
+  /* Fixed heights ensure alignment */
+  height: 300px; 
+  object-fit: contain; /* Shows whole drawing without cropping */
+  background: #fff;
+  padding: 10px; /* Breathing room for drawing */
 }
 
+/* The Caption (Now sits below image) */
+.cad-gallery .visual-item .caption {
+  position: relative; /* Not absolute */
+  opacity: 1;         /* Always visible */
+  background: #fff;
+  color: #555;
+  padding: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+
+/* Layout Specifics */
+/* Large image spans full width */
 .large-visual {
-  grid-column: 1 / -1; /* Spans full width */
+  grid-column: 1 / -1; 
   grid-row: 1;
 }
 
-/* --- CAD FOOTER --- */
+/* Small images (Section View / Sketch) */
+.cad-gallery .visual-item:not(.large-visual) img {
+  height: 200px; /* Smaller height for bottom row */
+}
+
+
+/* --- FOOTER --- */
 .cad-footer {
   background: #f9f9f9;
-  padding: 20px 50px;
+  padding: 15px 40px;
   border-top: 1px solid #eee;
   font-size: 0.9rem;
   color: #666;
 }
 
-/* --- RESPONSIVE --- */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 900px) {
   .cad-content-grid {
-    grid-template-columns: 1fr; /* Stack on mobile */
+    grid-template-columns: 1fr; /* Stack Text on top of Images */
   }
   
   .cad-text {
-    padding: 30px; /* Slightly less padding on mobile */
     border-right: none;
     border-bottom: 1px solid #eee;
   }
-  
-  .cad-gallery {
-    grid-template-rows: 300px 150px; /* Fixed heights for mobile stability */
-  }
 }
+
+
