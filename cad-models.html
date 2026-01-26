@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAD Models | Safiu Benin</title>
+  
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <!-- Note: I added 'CAD Models' to the links list -->
+  <nav class="navbar">
+    <div class="logo">SB.</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="cad-models.html" class="active">CAD Models</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>CAD Library</h1>
+    <p>Parametric Modeling & Design for Manufacturability (DFM)</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- CAD ENTRY 1: Centrifuge Tube -->
+    <article class="project-card cad-detailed-card">
+      
+      <!-- Header -->
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>Parametric Centrifuge Tube</h2>
+          <span class="project-type">Injection Molding Design</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">SolidWorks</span>
+          <span class="badge">Parametric Modeling</span>
+          <span class="badge">DFM</span>
+        </div>
+      </div>
+
+      <div class="cad-content-grid">
+        
+        <!-- Left Column: Technical Data -->
+        <div class="cad-text">
+          <h3><i class="fas fa-drafting-compass"></i> Modeling Approach</h3>
+          <p>
+            The tube body was created using a <strong>revolved profile</strong> to ensure consistent wall thickness and rotational symmetry. A centerline was used as the axis of revolution, with inner and outer profiles fully constrained to define a uniform <strong>2 mm wall thickness</strong>.
+          </p>
+          <p>
+            The curved base was generated using tangent arcs to replicate standard geometry. The top lip was modeled as a separate feature with a gripping interface, utilizing fillets to reduce stress concentrations.
+          </p>
+
+          <h3><i class="fas fa-ruler-combined"></i> Key Specifications</h3>
+          <ul class="specs-list">
+            <li><strong>Outer Diameter:</strong> 17 mm</li>
+            <li><strong>Inner Diameter:</strong> 15 mm</li>
+            <li><strong>Total Length:</strong> 80 mm</li>
+            <li><strong>Wall Thickness:</strong> 2 mm</li>
+            <li><strong>Material:</strong> Polypropylene Copolymer (PP-co)</li>
+          </ul>
+
+          <div class="material-rationale">
+            <strong>Material Selection Rationale:</strong>
+            <p>PP-co was selected for its high chemical resistance, durability, and standard application in laboratory consumables.</p>
+          </div>
+        </div>
+
+        <!-- Right Column: Gallery (3 Images based on PDF) -->
+        <div class="cad-gallery">
+          
+          <!-- Image 1: Isometric -->
+          <div class="visual-item large-visual">
+            <img src="https://via.placeholder.com/800x600?text=Isometric+Render" alt="Isometric Render of Centrifuge Tube">
+            <p class="caption">Isometric render showing matte, cool-toned appearance.</p>
+          </div>
+
+          <!-- Image 2: Section View -->
+          <div class="visual-item">
+            <img src="https://via.placeholder.com/400x300?text=Section+View" alt="Section View showing wall thickness">
+            <p class="caption">Section view highlighting uniform wall thickness & curved base.</p>
+          </div>
+
+          <!-- Image 3: Sketch -->
+          <div class="visual-item">
+            <img src="https://via.placeholder.com/400x300?text=Revolved+Profile+Sketch" alt="Fully Defined Sketch">
+            <p class="caption">Fully defined sketch showing design intent.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Skills Footer -->
+      <div class="cad-footer">
+        <strong>Demonstrated Skills:</strong> Revolved features, Sketch constraints, Dimension-driven design, Material assignment, Visualization.
+      </div>
+
+    </article>
+
+    <!-- You can duplicate the <article> block above to add more models later -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
