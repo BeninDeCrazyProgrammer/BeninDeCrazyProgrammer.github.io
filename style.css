@@ -629,10 +629,12 @@ footer {
 /* -------------------------------------------------------
    3. CAD MODELS PAGE STYLES (Technical Style)
    ------------------------------------------------------- */
-/* Flex Layout for CAD Card */
+/* --- 3.1 DETAILED CARD (Suction Pump & Centrifuge) --- */
+
+/* Flex Layout for CAD Card Wrapper */
 .cad-detailed-card {
   display: flex;
-  flex-direction: column; /* Reset to column for the card wrapper */
+  flex-direction: column;
 }
 
 /* Grid Layout: Text Left, Images Right */
@@ -683,20 +685,22 @@ footer {
   padding: 10px;
 }
 
-/* CAD Visual Item (SEPARATE FROM PROJECTS) */
+/* CAD Visual Item */
 .cad-gallery .visual-item {
   background: white;
   border: 1px solid #ddd;
   display: flex;
   flex-direction: column; /* Forces caption BELOW image */
   height: 100%;
+  position: relative;
 }
 
 /* CAD Image */
-.cad-gallery .visual-item img {
+.cad-gallery .visual-item img,
+.cad-gallery .visual-item video { /* Added Video Support */
   width: 100%;
   height: 300px; /* Fixed height */
-  object-fit: contain; /* Ensures whole drawing is visible */
+  object-fit: contain; /* Ensures whole drawing/video is visible */
   background: #fff;
   padding: 10px;
 }
@@ -726,6 +730,74 @@ footer {
   font-size: 0.9rem; color: #666;
 }
 
+/* --- 3.2 COMPONENT REPOSITORY (New Compact Styles) --- */
+
+/* Section Title */
+.section-title {
+  color: #0b3c5d;
+  font-size: 1.8rem;
+  margin: 50px 0 30px 0;
+  border-left: 5px solid #328cc1;
+  padding-left: 15px;
+}
+
+/* Grid Wrapper for Compact Cards */
+.cad-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Columns */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* The Compact Card Container */
+.cad-compact-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 100%; /* Ensures equal height in grid */
+}
+
+/* Compact Gallery (Top Half) */
+.cad-gallery-compact {
+  background: #f4f4f4;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.cad-gallery-compact .main-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: white;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+}
+
+.sub-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.sub-images .visual-item img {
+  width: 100%;
+  height: 150px; /* Smaller height for sub-images */
+  object-fit: contain;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+/* Compact Text (Bottom Half) */
+.cad-text-compact {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.compact-header { margin-bottom: 15px; }
+.compact-header h3 { color: #0b3c5d; font-size: 1.25rem; margin-bottom: 10px; }
+
 /* -------------------------------------------------------
    4. RESPONSIVE (Unified)
    ------------------------------------------------------- */
@@ -735,11 +807,10 @@ footer {
   .project-card .project-visuals { grid-template-columns: 1fr; }
   .project-card .caption { opacity: 1; position: relative; background: #333; }
   
-  /* CAD Page Mobile */
+  /* CAD Detailed Card Mobile */
   .cad-content-grid { grid-template-columns: 1fr; }
   .cad-text { border-right: none; border-bottom: 1px solid #eee; }
+  
+  /* CAD Component Grid Mobile */
+  .cad-grid-wrapper { grid-template-columns: 1fr; } /* Stacks the holders vertically */
 }
-
-
-
-
