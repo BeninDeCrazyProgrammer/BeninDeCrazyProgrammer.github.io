@@ -115,6 +115,120 @@
 
   </main>
 
+  <!-- ... Previous Centrifuge Tube Article Ends Here ... -->
+
+    <!-- REPOSITORY TITLE -->
+    <h2 class="section-title"><i class="fas fa-folder-open"></i> Model Repository</h2>
+    <p class="section-subtitle">Click on a project bar to view technical details.</p>
+
+    <!-- THE FOLDER SYSTEM -->
+    <div class="repository-container">
+
+      <!-- FOLDER ITEM 1: Probe Holder -->
+      <div class="folder-item">
+        <!-- The Clickable Header -->
+        <button class="folder-header">
+          <div class="folder-title">
+            <span class="folder-icon"><i class="fas fa-file-invoice"></i></span>
+            <strong>Laboratory Probe holder</strong>
+            <span class="badge-mini">SolidWorks</span>
+          </div>
+          <div class="folder-arrow"><i class="fas fa-chevron-down"></i></div>
+        </button>
+
+        <!-- The Hidden Content (Expands when clicked) -->
+        <div class="folder-content">
+          <div class="cad-detailed-card no-shadow">
+            <div class="cad-content-grid">
+              <!-- Technical Text -->
+              <div class="cad-text">
+                <h3>Design Intent</h3>
+                <p>Designed a plunger mechanism with specific tolerance for airtight sealing. Focused on ribbed structural integrity for injection molding.</p>
+                <ul class="specs-list">
+                  <li><strong>Material:</strong> Polypropylene</li>
+                  <li><strong>Tolerance:</strong> +/- 0.05mm</li>
+                </ul>
+              </div>
+              <!-- Gallery -->
+              <div class="cad-gallery">
+                <div class="visual-item large-visual">
+                  <img src="https://via.placeholder.com/600x400?text=Syringe+Iso" alt="ISO View">
+                </div>
+                <div class="visual-item">
+                  <img src="https://via.placeholder.com/300x200?text=Section" alt="Section View">
+                </div>
+                <div class="visual-item">
+                  <img src="https://via.placeholder.com/300x200?text=Sketch" alt="Sketch">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOLDER ITEM 2: Prosthetic Hinge -->
+      <div class="folder-item">
+        <button class="folder-header">
+          <div class="folder-title">
+            <span class="folder-icon"><i class="fas fa-cogs"></i></span>
+            <strong>Prosthetic Hinge Joint</strong>
+            <span class="badge-mini">Fusion 360</span>
+          </div>
+          <div class="folder-arrow"><i class="fas fa-chevron-down"></i></div>
+        </button>
+
+        <div class="folder-content">
+          <div class="cad-detailed-card no-shadow">
+            <div class="cad-content-grid">
+              <div class="cad-text">
+                <h3>Assembly Details</h3>
+                <p>Multi-part assembly modeling for a knee brace. Conducted interference detection and motion study.</p>
+                <ul class="specs-list">
+                  <li><strong>Material:</strong> Aluminum 6061</li>
+                  <li><strong>Load:</strong> 500N Static</li>
+                </ul>
+              </div>
+              <div class="cad-gallery">
+                <div class="visual-item large-visual">
+                  <img src="https://via.placeholder.com/600x400?text=Hinge+Assembly" alt="Assembly">
+                </div>
+                <div class="visual-item">
+                  <img src="https://via.placeholder.com/300x200?text=Exploded" alt="Exploded View">
+                </div>
+                <div class="visual-item">
+                  <img src="https://via.placeholder.com/300x200?text=Motion" alt="Motion Study">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DUPLICATE THE 'FOLDER ITEM' BLOCK FOR MODELS 3, 4, 5, 6 -->
+
+    </div>
+
+    <!-- JAVASCRIPT FOR FOLDER FUNCTIONALITY -->
+    <!-- Add this right before the </body> tag -->
+    <script>
+      const folders = document.querySelectorAll('.folder-header');
+
+      folders.forEach(folder => {
+        folder.addEventListener('click', () => {
+          // Toggle the active class on the button
+          folder.classList.toggle('active');
+          
+          // Toggle the content
+          const content = folder.nextElementSibling;
+          if (folder.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
