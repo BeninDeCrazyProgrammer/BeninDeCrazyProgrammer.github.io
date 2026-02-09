@@ -14,7 +14,6 @@
 <body>
 
   <!-- Navigation -->
-  <!-- Note: I added 'CAD Models' to the links list -->
   <nav class="navbar">
     <div class="logo">SB.</div>
     <div class="nav-links">
@@ -30,16 +29,85 @@
   <!-- Page Header -->
   <header class="page-header">
     <h1>CAD Library</h1>
-    <p>Parametric Modeling & Design for Manufacturability (DFM)</p>
+    <p>SolidWorks Design, Parametric Modeling & Technical Documentation</p>
   </header>
 
   <!-- Main Container -->
   <main class="container">
 
-    <!-- CAD ENTRY 1: Centrifuge Tube -->
+    <!-- PROJECT 1 (HERO): Medical Suction Pump -->
     <article class="project-card cad-detailed-card">
-      
-      <!-- Header -->
+      <div class="project-header">
+        <div class="project-meta">
+          <h2>Medical Suction Pump Assembly</h2>
+          <span class="project-type">Full Device Assembly & Animation</span>
+        </div>
+        <div class="tech-stack">
+          <span class="badge">SolidWorks</span>
+          <span class="badge">Assembly Modeling</span>
+          <span class="badge">Animation</span>
+        </div>
+      </div>
+
+      <div class="cad-content-grid">
+        <div class="cad-text">
+          <h3><i class="fas fa-tools"></i> Design Overview</h3>
+          <p>
+            A fully modeled medical suction pump designed for hospital ward mobility. This project involved creating individual components (canisters, motor housing, frame, casters) and mating them into a functional assembly.
+          </p>
+          <p>The design focuses on stability, ease of canister access, and ergonomic mobility.</p>
+
+          <h3><i class="fas fa-list-ul"></i> Components Modeled</h3>
+          <ul class="specs-list">
+            <li><strong>Main Body:</strong> Sheet metal housing</li>
+            <li><strong>Fluid System:</strong> Twin canisters with lid & outlet</li>
+            <li><strong>Mobility:</strong> Caster wheels & structural frame</li>
+          </ul>
+
+          <div class="material-rationale">
+            <strong>Documentation:</strong>
+            <p>Includes full Bill of Materials (BOM), exploded views, and motion study animation.</p>
+          </div>
+
+          <!-- Drive Link Placeholder -->
+          <div style="margin-top: 30px;">
+            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">
+              <i class="fab fa-google-drive"></i> Download Part Files
+            </a>
+          </div>
+        </div>
+
+        <div class="cad-gallery">
+          <!-- Video / Animation -->
+          <div class="visual-item large-visual">
+            <video controls poster="Assem1.PNG" style="width: 100%; height: 100%; object-fit: contain;">
+              <source src="suction_pump_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="caption">Motion study / 360&deg; Animation</p>
+          </div>
+
+          <!-- Isometric View -->
+          <div class="visual-item">
+            <img src="Assem1.PNG" alt="Suction Pump Isometric View">
+            <p class="caption">Full Assembly Isometric Render</p>
+          </div>
+
+          <!-- Detailed Drawing -->
+          <div class="visual-item">
+            <img src="Drawing.PNG" alt="Technical Drawing with BOM">
+            <p class="caption">Technical Drawing & Bill of Materials</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cad-footer">
+        <strong>Demonstrated Skills:</strong> Bottom-up Assembly, Mating Constraints, Exploded Views, Bill of Materials (BOM).
+      </div>
+    </article>
+
+    <!-- PROJECT 2: Centrifuge Tube (Detailed) -->
+    <article class="project-card cad-detailed-card">
       <div class="project-header">
         <div class="project-meta">
           <h2>Parametric Centrifuge Tube</h2>
@@ -53,181 +121,112 @@
       </div>
 
       <div class="cad-content-grid">
-        
-        <!-- Left Column: Technical Data -->
         <div class="cad-text">
           <h3><i class="fas fa-drafting-compass"></i> Modeling Approach</h3>
           <p>
-            The tube body was created using a <strong>revolved profile</strong> to ensure consistent wall thickness and rotational symmetry. A centerline was used as the axis of revolution, with inner and outer profiles fully constrained to define a uniform <strong>2 mm wall thickness</strong>.
+            The tube body was created using a <strong>revolved profile</strong> to ensure consistent wall thickness. A centerline was used as the axis of revolution, with inner and outer profiles fully constrained to define a uniform <strong>2 mm wall thickness</strong>.
           </p>
           <p>
-            The curved base was generated using tangent arcs to replicate standard geometry. The top lip was modeled as a separate feature with a gripping interface, utilizing fillets to reduce stress concentrations.
+            Features include tangent arcs for the curved base and a modeled lip for the gripping interface, utilizing fillets to reduce stress concentrations.
           </p>
 
           <h3><i class="fas fa-ruler-combined"></i> Key Specifications</h3>
           <ul class="specs-list">
             <li><strong>Outer Diameter:</strong> 17 mm</li>
-            <li><strong>Inner Diameter:</strong> 15 mm</li>
-            <li><strong>Total Length:</strong> 80 mm</li>
+            <li><strong>Length:</strong> 80 mm</li>
             <li><strong>Wall Thickness:</strong> 2 mm</li>
             <li><strong>Material:</strong> Polypropylene Copolymer (PP-co)</li>
           </ul>
 
           <div class="material-rationale">
             <strong>Material Selection Rationale:</strong>
-            <p>PP-co was selected for its high chemical resistance, durability, and standard application in laboratory consumables.</p>
+            <p>PP-co selected for high chemical resistance and durability in lab environments.</p>
           </div>
         </div>
 
-        <!-- Right Column: Gallery (3 Images based on PDF) -->
         <div class="cad-gallery">
-          
-          <!-- Image 1: Isometric -->
           <div class="visual-item large-visual">
-            <img src="tube.png" alt="Isometric Render of Centrifuge Tube">
-            <p class="caption">Isometric render showing matte, cool-toned appearance.</p>
+            <img src="tube.png" alt="Isometric Render">
+            <p class="caption">Isometric render showing matte appearance.</p>
           </div>
-
-          <!-- Image 2: Section View -->
           <div class="visual-item">
-            <img src="tube drawing.png" alt="Section View showing wall thickness">
-            <p class="caption">Section view highlighting uniform wall thickness & curved base.</p>
+            <img src="tube drawing.png" alt="Section View">
+            <p class="caption">Section view highlighting uniform wall thickness.</p>
           </div>
-
-          <!-- Image 3: Sketch -->
           <div class="visual-item">
-            <img src="Picture3.png" alt="Fully Defined Sketch">
+            <img src="Picture3.png" alt="Sketch">
             <p class="caption">Fully defined sketch showing design intent.</p>
           </div>
-
         </div>
-
       </div>
 
-      <!-- Skills Footer -->
       <div class="cad-footer">
-        <strong>Demonstrated Skills:</strong> Revolved features, Sketch constraints, Dimension-driven design, Material assignment, Visualization.
+        <strong>Demonstrated Skills:</strong> Revolved features, Sketch constraints, Dimension-driven design, Material assignment.
       </div>
-
     </article>
 
-    <!-- You can duplicate the <article> block above to add more models later -->
+    <!-- COMPONENT REPOSITORY (Grid for Smaller Parts) -->
+    <h2 class="section-title">Component Repository</h2>
+    
+    <div class="cad-grid-wrapper">
 
-  </main>
-
-  <!-- ... Previous Centrifuge Tube Article Ends Here ... -->
-
-    <!-- REPOSITORY TITLE -->
-    <h2 class="section-title"><i class="fas fa-folder-open"></i> Model Repository</h2>
-    <p class="section-subtitle">Click on a project bar to view technical details.</p>
-
-    <!-- THE FOLDER SYSTEM -->
-    <div class="repository-container">
-
-      <!-- FOLDER ITEM 1: Probe Holder -->
-      <div class="folder-item">
-        <!-- The Clickable Header -->
-        <button class="folder-header">
-          <div class="folder-title">
-            <span class="folder-icon"><i class="fas fa-file-invoice"></i></span>
-            <strong>Laboratory Probe holder</strong>
-            <span class="badge-mini">SolidWorks</span>
+      <!-- COMPONENT 1: Cable Holder -->
+      <article class="project-card cad-compact-card">
+        <div class="cad-gallery-compact">
+          <div class="visual-item main-img">
+            <img src="Cable holder.PNG" alt="Cable Holder Isometric">
           </div>
-          <div class="folder-arrow"><i class="fas fa-chevron-down"></i></div>
-        </button>
-
-        <!-- The Hidden Content (Expands when clicked) -->
-        <div class="folder-content">
-          <div class="cad-detailed-card no-shadow">
-            <div class="cad-content-grid">
-              <!-- Technical Text -->
-              <div class="cad-text">
-                <h3>Design Intent</h3>
-                <p>Designed a plunger mechanism with specific tolerance for airtight sealing. Focused on ribbed structural integrity for injection molding.</p>
-                <ul class="specs-list">
-                  <li><strong>Material:</strong> Polypropylene</li>
-                  <li><strong>Tolerance:</strong> +/- 0.05mm</li>
-                </ul>
-              </div>
-              <!-- Gallery -->
-              <div class="cad-gallery">
-                <div class="visual-item large-visual">
-                  <img src="https://via.placeholder.com/600x400?text=Syringe+Iso" alt="ISO View">
-                </div>
-                <div class="visual-item">
-                  <img src="https://via.placeholder.com/300x200?text=Section" alt="Section View">
-                </div>
-                <div class="visual-item">
-                  <img src="https://via.placeholder.com/300x200?text=Sketch" alt="Sketch">
-                </div>
-              </div>
+          <div class="sub-images">
+            <div class="visual-item" style="grid-column: span 2;">
+              <img src="BCable Holder.PNG" alt="Cable Holder Drawing">
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- FOLDER ITEM 2: Prosthetic Hinge -->
-      <div class="folder-item">
-        <button class="folder-header">
-          <div class="folder-title">
-            <span class="folder-icon"><i class="fas fa-cogs"></i></span>
-            <strong>Prosthetic Hinge Joint</strong>
-            <span class="badge-mini">Fusion 360</span>
+        <div class="cad-text-compact">
+          <div class="compact-header">
+            <h3>Cable Management Holder</h3>
+            <div class="tech-stack">
+              <span class="badge">SolidWorks</span>
+              <span class="badge">Sheet Metal</span>
+            </div>
           </div>
-          <div class="folder-arrow"><i class="fas fa-chevron-down"></i></div>
-        </button>
+          <p>A slotted bracket designed to organize medical tubing and power cables. Features multiple retention slots with stress-relief fillets.</p>
+          <a href="#" class="btn-text" style="margin-top: auto;">
+            <i class="fas fa-download"></i> Get Files
+          </a>
+        </div>
+      </article>
 
-        <div class="folder-content">
-          <div class="cad-detailed-card no-shadow">
-            <div class="cad-content-grid">
-              <div class="cad-text">
-                <h3>Assembly Details</h3>
-                <p>Multi-part assembly modeling for a knee brace. Conducted interference detection and motion study.</p>
-                <ul class="specs-list">
-                  <li><strong>Material:</strong> Aluminum 6061</li>
-                  <li><strong>Load:</strong> 500N Static</li>
-                </ul>
-              </div>
-              <div class="cad-gallery">
-                <div class="visual-item large-visual">
-                  <img src="https://via.placeholder.com/600x400?text=Hinge+Assembly" alt="Assembly">
-                </div>
-                <div class="visual-item">
-                  <img src="https://via.placeholder.com/300x200?text=Exploded" alt="Exploded View">
-                </div>
-                <div class="visual-item">
-                  <img src="https://via.placeholder.com/300x200?text=Motion" alt="Motion Study">
-                </div>
-              </div>
+      <!-- COMPONENT 2: Probe Holder -->
+      <article class="project-card cad-compact-card">
+        <div class="cad-gallery-compact">
+          <div class="visual-item main-img">
+            <img src="probe holder1.PNG" alt="Probe Holder Isometric">
+          </div>
+          <div class="sub-images">
+            <div class="visual-item" style="grid-column: span 2;">
+              <img src="probe holder.JPG" alt="Probe Holder Drawing">
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- DUPLICATE THE 'FOLDER ITEM' BLOCK FOR MODELS 3, 4, 5, 6 -->
+        <div class="cad-text-compact">
+          <div class="compact-header">
+            <h3>Medical Probe Holder</h3>
+            <div class="tech-stack">
+              <span class="badge">SolidWorks</span>
+              <span class="badge">Part Design</span>
+            </div>
+          </div>
+          <p>Wall-mounted bracket for securing medical probes. Designed with countersunk holes for flush mounting and a reinforced hook structure.</p>
+          <a href="#" class="btn-text" style="margin-top: auto;">
+            <i class="fas fa-download"></i> Get Files
+          </a>
+        </div>
+      </article>
 
     </div>
 
-    <!-- JAVASCRIPT FOR FOLDER FUNCTIONALITY -->
-    <!-- Add this right before the </body> tag -->
-    <script>
-      const folders = document.querySelectorAll('.folder-header');
-
-      folders.forEach(folder => {
-        folder.addEventListener('click', () => {
-          // Toggle the active class on the button
-          folder.classList.toggle('active');
-          
-          // Toggle the content
-          const content = folder.nextElementSibling;
-          if (folder.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + "px";
-          } else {
-            content.style.maxHeight = 0;
-          }
-        });
-      });
-    </script>
+  </main>
 
   <!-- Footer -->
   <footer>
