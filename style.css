@@ -141,6 +141,8 @@ nav.navbar {
   gap: 50px;
   margin-bottom: 60px;
   background: white; /* Ensures text is readable */
+  max-width: 1100px;
+   padding: 60px 40px;
 }
 
 .bio-text, .bio-content {
