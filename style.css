@@ -149,8 +149,8 @@ nav.navbar {
 
 .bio-text h2, .bio-content h2 {
   color: #0b3c5d;
-  border-left: 5px solid #328cc1;
-  padding-left: 15px;
+  border-left: 15px solid #328cc1;
+  padding-left: 30px;
   margin-bottom: 20px;
 }
 
