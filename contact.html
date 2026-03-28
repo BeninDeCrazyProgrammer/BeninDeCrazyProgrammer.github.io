@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Safiu Benin</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -44,22 +45,27 @@
         <div class="info-card">
           <div class="info-label">Email</div>
           <div class="info-value">
-            <a href="mailto:safiubenin@gmail.com">safiubenin@gmail.com</a>
+            <a href="mailto:safiubenin@gmail.com"><i class="fas fa-envelope"></i> safiubenin@gmail.com</a>
           </div>
         </div>
 
         <div class="info-card">
           <div class="info-label">Location</div>
-          <div class="info-value">Accra, Ghana</div>
+          <div class="info-value"><i class="fas fa-map-marker-alt"></i> Accra, Ghana</div>
         </div>
 
         <div class="info-card">
           <div class="info-label">Socials</div>
-          <div class="info-value">
-            <a href="https://github.com/BeninDeCrazyProgrammer" target="_blank" class="social-link">GitHub Profile</a>
-            <!-- Uncomment when you have LinkedIn
-            <a href="#" class="social-link">LinkedIn</a> 
-            -->
+          <!-- Added Flexbox styling to stack the links neatly -->
+          <div class="info-value" style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="https://github.com/BeninDeCrazyProgrammer" target="_blank" class="social-link">
+              <i class="fab fa-github"></i> GitHub Profile
+            </a>
+            
+            <!-- LINKEDIN ADDED HERE -->
+            <a href="https://www.linkedin.com/in/safiu-benin/" target="_blank" class="social-link">
+              <i class="fab fa-linkedin"></i> LinkedIn Profile
+            </a>
           </div>
         </div>
       </div>
