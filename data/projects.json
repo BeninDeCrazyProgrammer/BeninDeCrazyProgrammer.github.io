@@ -1,0 +1,74 @@
+[
+  {
+    "id": "breast-cancer-tumor-segmentation",
+    "title": "Breast Cancer Tumor Segmentation",
+    "type": "Final Year Capstone",
+    "tags": ["Python", "PyTorch", "Computer Vision"],
+    "images": [
+      { "src": "SG_results.png", "caption": "FIG. 01 — Model output showing tumor segmentation mask." },
+      { "src": "MTL.png", "caption": "FIG. 02 — Multi-Task Learning model architecture implemented in PyTorch." }
+    ],
+    "description": "Developed an automated deep learning model to segment and classify tumor masses and calcifications in mammograms using the INBreast and CBIS-DDSM datasets. The model was deployed via a web application to serve as a clinical decision support tool for radiologists.",
+    "link": { "label": "View Code", "url": "#" }
+  },
+  {
+    "id": "tlso-cash-brace-design",
+    "title": "TLSO — CASH Brace Design",
+    "type": "Orthotics & Prosthetics",
+    "tags": ["SolidWorks", "Fusion 360", "Reverse Engineering"],
+    "images": [
+      { "src": "TLSO.png", "caption": "FIG. 01 — Full 3D assembly of the Cruciform Anterior Spinal Hyperextension brace." },
+      { "src": "TLSO_drawing.png", "caption": "FIG. 02 — Exploded view showing mechanical adjustment mechanisms." }
+    ],
+    "description": "Reverse-engineered a Cruciform Anterior Spinal Hyperextension (CASH) brace used for spinal stabilization. Created accurate 3D models in SolidWorks and Fusion 360 to analyze the mechanical structure and improve fitting adjustability.",
+    "link": null
+  },
+  {
+    "id": "sms-telemetry-febrile-hypoxia",
+    "title": "SMS Telemetry for Febrile Hypoxia",
+    "type": "Medical Telemedicine",
+    "tags": ["Arduino", "IoT", "Hubtel API"],
+    "images": [
+      { "src": "FH_setup.png", "caption": "FIG. 01 — Microcontroller circuit integration for pulse oximetry data." },
+      { "src": "FH_hardware.png", "caption": "FIG. 02 — 3D printed housing designed to protect electronics." }
+    ],
+    "description": "Designed a low-cost remote monitoring system that detects febrile hypoxia. Programmed an Arduino to read physiological data and utilized the Hubtel API to send SMS alerts to caregivers, ensuring timely intervention in resource-poor settings.",
+    "link": null
+  },
+  {
+    "id": "morgue-refrigeration-system-study",
+    "title": "Morgue Refrigeration System Study",
+    "type": "Biomedical Systems",
+    "tags": ["SolidWorks", "Excel Analysis", "HVAC"],
+    "images": [
+      { "src": "referigerator.png", "caption": "FIG. 01 — Proposed layout for the Everlasting Morgue Consortium." },
+      { "src": "benchmarking.png", "caption": "FIG. 02 — Benchmarking matrix comparing energy efficiency of top brands." }
+    ],
+    "description": "Conducted a technical benchmarking study on industrial refrigeration systems. Analyzed cooling capacity and power consumption to recommend optimal brands, delivering detailed CAD layouts for the installation.",
+    "link": null
+  },
+  {
+    "id": "adjustable-orthotic-shoe-lift",
+    "title": "Adjustable Orthotic Shoe Lift",
+    "type": "Rehabilitation Engineering",
+    "tags": ["SolidWorks", "FEA Simulation", "3D Printing"],
+    "images": [
+      { "src": "dms.png", "caption": "FIG. 01 — Adjustable mechanism to correct Leg Length Inequality (LLI)." },
+      { "src": "dms_drawing.png", "caption": "FIG. 02 — 2D CAD drawing of ankle-foot orthosis." }
+    ],
+    "description": "Designed a customizable shoe lift for patients with Leg Length Inequality. Performed material selection and Finite Element Analysis (FEA) to ensure the device could withstand daily walking stresses while maintaining patient comfort.",
+    "link": null
+  },
+  {
+    "id": "mobile-iv-delivery-system",
+    "title": "Mobile IV Delivery System",
+    "type": "Biomaterials & Design",
+    "tags": ["Fusion 360", "Product Design", "Ergonomics"],
+    "images": [
+      { "src": "iv_setup.png", "caption": "FIG. 01 — Enhanced mobility design for patient IV delivery." },
+      { "src": "IV_fea.png", "caption": "FIG. 02 — Finite Element Analysis (FEA) testing load distribution." }
+    ],
+    "description": "Designed an improved IV pole system focused on patient stability and mobility. Utilized the engineering design process from concept sketches in Fusion 360 to FEA validation, addressing common issues with tipping and transport.",
+    "link": null
+  }
+]

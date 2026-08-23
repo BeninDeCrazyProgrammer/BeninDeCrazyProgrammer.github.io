@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | Safiu Benin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="logo-mark">S</span>·B</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="cad-models.html">CAD Models</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <h1>Admin</h1>
+      <p>Add projects and milestones without editing code</p>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 900px;">
+
+    <!-- Connect -->
+    <section class="admin-section">
+      <div class="eyebrow">Step 1</div>
+      <h2>Connect to GitHub</h2>
+      <p class="admin-sub">This commits changes straight to your repo, so the site updates without you writing any HTML.</p>
+
+      <div class="admin-warning">
+        Use a <strong>fine-grained personal access token</strong> scoped only to the
+        <strong>BeninDeCrazyProgrammer.github.io</strong> repository, with <strong>Contents: Read and write</strong>
+        permission and a short expiry. Create one at
+        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">github.com/settings/personal-access-tokens/new</a>.
+        The token stays only in this browser tab (cleared when you close it) and is sent only to api.github.com —
+        never paste it anywhere else, and don't use this page on a shared computer.
+      </div>
+
+      <div class="token-row">
+        <div class="form-group">
+          <label for="gh-token">Personal Access Token</label>
+          <input type="password" id="gh-token" placeholder="github_pat_...">
+        </div>
+        <button id="connect-btn" type="button" class="btn btn-primary">Connect</button>
+      </div>
+      <div id="connect-status" class="admin-status"></div>
+    </section>
+
+    <div id="admin-forms" style="display: none;">
+
+      <!-- Add Project -->
+      <section class="admin-section">
+        <div class="eyebrow">Step 2</div>
+        <h2>Add a Project</h2>
+        <p class="admin-sub">Appears at the top of the Projects page.</p>
+
+        <form id="project-form">
+          <div class="admin-grid">
+            <div class="form-group">
+              <label for="p-title">Title</label>
+              <input type="text" id="p-title" placeholder="e.g. Portable ECG Monitor" required>
+            </div>
+            <div class="form-group">
+              <label for="p-type">Type / Category</label>
+              <input type="text" id="p-type" placeholder="e.g. Embedded Systems">
+            </div>
+            <div class="form-group full">
+              <label for="p-tags">Tags (comma-separated)</label>
+              <input type="text" id="p-tags" placeholder="e.g. Arduino, PCB Design, Signal Processing">
+            </div>
+            <div class="form-group full">
+              <label for="p-description">Description</label>
+              <textarea id="p-description" rows="4" placeholder="What it is, what you did, what it demonstrates." required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="p-link-label">Link Label (optional)</label>
+              <input type="text" id="p-link-label" placeholder="e.g. View Code">
+            </div>
+            <div class="form-group">
+              <label for="p-link-url">Link URL (optional)</label>
+              <input type="text" id="p-link-url" placeholder="https://...">
+            </div>
+          </div>
+
+          <label style="display:block; margin: 10px 0 8px; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--graphite);">
+            Images
+          </label>
+          <div id="image-repeater" class="image-repeater"></div>
+          <button type="button" id="add-image-row" class="btn btn-outline" style="margin-bottom: 24px;">+ Add another image</button>
+
+          <button type="submit" class="btn btn-primary">Publish Project</button>
+          <div id="project-status" class="admin-status"></div>
+        </form>
+
+        <hr class="divider">
+        <h3 style="font-size: 1.05rem; margin-bottom: 12px;">Existing Projects</h3>
+        <div id="projects-manage-list" class="entry-list"></div>
+      </section>
+
+      <!-- Add Milestone -->
+      <section class="admin-section">
+        <div class="eyebrow">Step 3</div>
+        <h2>Add a Milestone</h2>
+        <p class="admin-sub">Appears in the Revision History timeline on the About page.</p>
+
+        <form id="milestone-form">
+          <div class="admin-grid">
+            <div class="form-group">
+              <label for="m-date">Date</label>
+              <input type="text" id="m-date" placeholder="e.g. 2026-03 or 2026" required>
+            </div>
+            <div class="form-group">
+              <label for="m-tag">Category</label>
+              <select id="m-tag">
+                <option>Education</option>
+                <option>Research</option>
+                <option>Clinical</option>
+                <option>Project</option>
+                <option>Award</option>
+                <option>Career</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="m-title">Title</label>
+              <input type="text" id="m-title" placeholder="e.g. Published first paper" required>
+            </div>
+            <div class="form-group full">
+              <label for="m-description">Description (optional)</label>
+              <textarea id="m-description" rows="3" placeholder="A sentence or two of context."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Publish Milestone</button>
+          <div id="milestone-status" class="admin-status"></div>
+        </form>
+
+        <hr class="divider">
+        <h3 style="font-size: 1.05rem; margin-bottom: 12px;">Existing Milestones</h3>
+        <div id="milestones-manage-list" class="entry-list"></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2026 Safiu Sumani Benin — Accra, Ghana</span>
+    <span class="footer-tag">Biomedical Engineering / AI</span>
+  </footer>
+
+  <script src="assets/admin.js"></script>
+</body>
+</html>

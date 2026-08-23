@@ -1,0 +1,23 @@
+[
+  {
+    "id": "national-service-accra-psychiatric",
+    "date": "2025",
+    "title": "National Service — Accra Psychiatric Hospital",
+    "description": "Began national service, gaining exposure to clinical environments, healthcare systems, and biomedical equipment in a mental health setting.",
+    "tag": "Clinical"
+  },
+  {
+    "id": "breast-cancer-capstone",
+    "date": "2025",
+    "title": "Breast Cancer Tumor Segmentation — Capstone",
+    "description": "Led development of a multi-task deep learning model for mammogram segmentation and classification, deployed as a clinical decision-support tool.",
+    "tag": "Research"
+  },
+  {
+    "id": "bsc-biomedical-engineering",
+    "date": "2025",
+    "title": "B.Sc. Biomedical Engineering",
+    "description": "Graduated from the University of Ghana.",
+    "tag": "Education"
+  }
+]

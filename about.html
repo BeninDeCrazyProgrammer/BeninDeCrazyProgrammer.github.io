@@ -19,9 +19,10 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
+
       <a href="projects.html">Projects</a>
-      <a href="cad-models.html">CAD Models</a>
       <a href="cv.html">CV</a>
+      <a href="cad-models.html">CAD Models</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
@@ -71,6 +72,28 @@
 
     <hr class="divider">
 
+    <!-- Revision History (Milestones) — rendered from data/milestones.json.
+         New entries added via admin.html appear here automatically. -->
+    <section class="revision-section">
+      <div class="eyebrow">Timeline</div>
+      <h3 class="rev-heading">Revision History</h3>
+      <table class="revision-table">
+        <thead>
+          <tr>
+            <th>Rev</th>
+            <th>Date</th>
+            <th>Milestone</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody id="revision-history-body">
+          <tr><td colspan="4" style="font-family: var(--font-mono); padding: 16px;">Loading…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="divider">
+
     <!-- Skills Section -->
     <section class="skills-section">
       <div class="eyebrow">Capabilities</div>
@@ -114,5 +137,6 @@
     <span class="footer-tag">Biomedical Engineering / AI</span>
   </footer>
 
+  <script src="assets/render.js"></script>
 </body>
 </html>
