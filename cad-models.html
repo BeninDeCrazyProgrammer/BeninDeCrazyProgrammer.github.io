@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAD Models | Safiu Benin</title>
-  
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="logo">SB.</div>
+    <a href="index.html" class="logo"><span class="logo-mark">S</span>·B</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -28,8 +28,10 @@
 
   <!-- Page Header -->
   <header class="page-header">
-    <h1>CAD Library</h1>
-    <p>SolidWorks Design, Parametric Modeling & Technical Documentation</p>
+    <div class="page-header-inner">
+      <h1>CAD Library</h1>
+      <p>SolidWorks Design, Parametric Modeling &amp; Technical Documentation</p>
+    </div>
   </header>
 
   <!-- Main Container -->
@@ -40,7 +42,7 @@
       <div class="project-header">
         <div class="project-meta">
           <h2>Medical Suction Pump Assembly</h2>
-          <span class="project-type">Full Device Assembly & Animation</span>
+          <span class="project-type">Full Device Assembly &amp; Animation</span>
         </div>
         <div class="tech-stack">
           <span class="badge">SolidWorks</span>
@@ -59,44 +61,40 @@
 
           <h3><i class="fas fa-list-ul"></i> Components Modeled</h3>
           <ul class="specs-list">
-            <li><strong>Main Body:</strong> Sheet metal housing</li>
-            <li><strong>Fluid System:</strong> Twin canisters with lid & outlet</li>
-            <li><strong>Mobility:</strong> Caster wheels & structural frame</li>
+            <li><strong>Main Body</strong><span>Sheet metal housing</span></li>
+            <li><strong>Fluid System</strong><span>Twin canisters with lid &amp; outlet</span></li>
+            <li><strong>Mobility</strong><span>Caster wheels &amp; structural frame</span></li>
           </ul>
 
           <div class="material-rationale">
-            <strong>Documentation:</strong>
+            <strong>Documentation</strong>
             <p>Includes full Bill of Materials (BOM), exploded views, and motion study animation.</p>
           </div>
 
-          <!-- Drive Link Placeholder -->
           <div style="margin-top: 30px;">
-            <a href="https://drive.google.com/drive/folders/1hqaAu93ddmrxdd5SGYtvD5QRcLh7VyzM?usp=drive_link" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">
+            <a href="https://drive.google.com/drive/folders/1hqaAu93ddmrxdd5SGYtvD5QRcLh7VyzM?usp=drive_link" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">
               <i class="fab fa-google-drive"></i> Download Part Files
             </a>
           </div>
         </div>
 
         <div class="cad-gallery">
-          <!-- Video / Animation -->
           <div class="visual-item large-visual">
             <video controls poster="Assem1.PNG" style="width: 100%; height: 100%; object-fit: contain;">
               <source src="suction_pump_video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <p class="caption">Motion study / 360&deg; Animation</p>
+            <p class="caption">Motion study / 360&deg; animation</p>
           </div>
 
-          <!-- Isometric View -->
           <div class="visual-item">
             <img src="Assem1.PNG" alt="Suction Pump Isometric View">
-            <p class="caption">Full Assembly Isometric Render</p>
+            <p class="caption">Full assembly isometric render</p>
           </div>
 
-          <!-- Detailed Drawing -->
           <div class="visual-item">
             <img src="Drawing.PNG" alt="Technical Drawing with BOM">
-            <p class="caption">Technical Drawing & Bill of Materials</p>
+            <p class="caption">Technical drawing &amp; bill of materials</p>
           </div>
         </div>
       </div>
@@ -132,14 +130,14 @@
 
           <h3><i class="fas fa-ruler-combined"></i> Key Specifications</h3>
           <ul class="specs-list">
-            <li><strong>Outer Diameter:</strong> 17 mm</li>
-            <li><strong>Length:</strong> 80 mm</li>
-            <li><strong>Wall Thickness:</strong> 2 mm</li>
-            <li><strong>Material:</strong> Polypropylene Copolymer (PP-co)</li>
+            <li><strong>Outer Diameter</strong><span>17 mm</span></li>
+            <li><strong>Length</strong><span>80 mm</span></li>
+            <li><strong>Wall Thickness</strong><span>2 mm</span></li>
+            <li><strong>Material</strong><span>Polypropylene Copolymer (PP-co)</span></li>
           </ul>
 
           <div class="material-rationale">
-            <strong>Material Selection Rationale:</strong>
+            <strong>Material Selection Rationale</strong>
             <p>PP-co selected for high chemical resistance and durability in lab environments.</p>
           </div>
         </div>
@@ -147,15 +145,15 @@
         <div class="cad-gallery">
           <div class="visual-item large-visual">
             <img src="tube.png" alt="Isometric Render">
-            <p class="caption">Isometric render showing matte appearance.</p>
+            <p class="caption">Isometric render showing matte appearance</p>
           </div>
           <div class="visual-item">
             <img src="tube drawing.png" alt="Section View">
-            <p class="caption">Section view highlighting uniform wall thickness.</p>
+            <p class="caption">Section view highlighting uniform wall thickness</p>
           </div>
           <div class="visual-item">
             <img src="Picture3.png" alt="Sketch">
-            <p class="caption">Fully defined sketch showing design intent.</p>
+            <p class="caption">Fully defined sketch showing design intent</p>
           </div>
         </div>
       </div>
@@ -167,7 +165,7 @@
 
     <!-- COMPONENT REPOSITORY (Grid for Smaller Parts) -->
     <h2 class="section-title">Component Repository</h2>
-    
+
     <div class="cad-grid-wrapper">
 
       <!-- COMPONENT 1: Cable Holder -->
@@ -230,7 +228,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
+    <span>&copy; 2026 Safiu Sumani Benin — Accra, Ghana</span>
+    <span class="footer-tag">Biomedical Engineering / AI</span>
   </footer>
 
 </body>

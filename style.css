@@ -1,566 +1,678 @@
-/* =========================================
-   1. RESET & BASICS
-   ========================================= */
-* {
-  box-sizing: border-box;
+/* =========================================================
+   SAFIU BENIN — PORTFOLIO
+   Design language: technical dossier — the visual grammar of
+   a CAD title block crossed with a diagnostic-imaging readout.
+   Every recurring motif (corner ticks, mono field labels,
+   FIG./SEC. numbering) is drawn from the artifacts in his own
+   work: engineering drawings and annotated scans.
+   ========================================================= */
+
+:root {
+  /* -- color: cool drafting paper + clinical ink + one
+        "annotation" accent, the color radiologists and CAD
+        reviewers actually mark up scans and drawings with -- */
+  --ink:        #10201f;   /* near-black, teal-leaning */
+  --ink-soft:   #1c3634;
+  --teal:       #123a3d;   /* primary brand */
+  --paper:      #f2f4ef;   /* cool drafting paper */
+  --paper-dim:  #e7e9e2;
+  --white:      #ffffff;
+  --graphite:   #4a5652;   /* body text on paper */
+  --line:       #cdd3c8;   /* hairline rules */
+  --line-dark:  rgba(242,244,239,0.25);
+  --coral:      #d1552f;   /* annotation / accent */
+  --blue:       #3f7ca6;   /* secondary technical accent */
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'IBM Plex Mono', monospace;
 }
 
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-body);
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
+  background: var(--paper);
+  color: var(--graphite);
+  line-height: 1.65;
+  font-size: 1.05rem;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
+  color: var(--ink);
   margin-top: 0;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-/* =========================================
-   2. NAVIGATION (Sticky Top)
-   ========================================= */
+p { margin-top: 0; }
+
+a { color: inherit; }
+
+img, video { max-width: 100%; display: block; }
+
+::selection { background: var(--coral); color: var(--white); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* =========================================================
+   EYEBROWS / MONO LABELS — the "spec sheet" vocabulary
+   ========================================================= */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  margin-right: 10px;
+  background: var(--coral);
+  display: inline-block;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 nav.navbar {
-  background: #0b3c5d; /* Your original blue */
-  padding: 1rem 2rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 1.1rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .logo {
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.logo .logo-mark {
+  color: var(--coral);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.85);
-  margin-left: 20px;
+  color: var(--graphite);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+  margin-left: 2rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:first-child { margin-left: 0; }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--coral);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--ink);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* =========================================================
+   HERO — cover sheet of the dossier
+   ========================================================= */
+.hero {
+  background: var(--paper);
+  padding: 90px 2.5rem 70px;
+  position: relative;
+}
+
+.hero-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.6rem, 5vw, 3.9rem);
+  margin-bottom: 6px;
+}
+
+.hero .subtitle {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.hero-content > p.lede {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin-bottom: 34px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* --- Title block: the signature element ---------------- */
+.title-block {
+  border: 1px solid var(--ink);
+  background: var(--white);
+  position: relative;
+  font-family: var(--font-mono);
+}
+
+.title-block::before,
+.title-block::after,
+.title-block .tb-corner-bl,
+.title-block .tb-corner-br {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--coral);
+}
+
+.title-block::before { top: -5px; left: -5px; border-width: 1px 0 0 1px; }
+.title-block::after  { top: -5px; right: -5px; border-width: 1px 1px 0 0; }
+.title-block .tb-corner-bl { bottom: -5px; left: -5px; border-width: 0 0 1px 1px; }
+.title-block .tb-corner-br { bottom: -5px; right: -5px; border-width: 0 1px 1px 0; }
+
+.title-block .tb-head {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-block dl {
+  margin: 0;
+  padding: 4px 0;
+}
+
+.title-block .tb-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.title-block .tb-row:last-child { border-bottom: none; }
+
+.title-block dt {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.title-block dd {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid var(--ink);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--coral); border-color: var(--coral); color: var(--white); transform: translateY(-2px); }
+
+.btn-outline { background: transparent; color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+
+.btn-large { padding: 16px 34px; font-size: 0.85rem; }
+
+.btn-text {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--coral);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover, 
-.nav-links a.active {
-  color: #fff;
-  border-bottom: 2px solid #328cc1; /* Lighter blue accent */
-}
-
-/* =========================================
-   3. HERO SECTION (Only for Home)
-   ========================================= */
-.hero {
-  background: linear-gradient(135deg, #0b3c5d 0%, #328cc1 100%);
-  color: white;
-  min-height: 85vh;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  gap: 6px;
 }
+.btn-text:hover { text-decoration: underline; }
 
-.hero-content {
-  max-width: 800px;
-  animation: fadeIn 1.5s ease;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #d9ecf7;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #eee;
-}
-
-.role {
-  font-style: italic;
-  opacity: 0.9;
-  margin-bottom: 40px;
-}
-
-/* =========================================
-   4. PAGE HEADERS (For About, Projects, etc)
-   ========================================= */
+/* =========================================================
+   PAGE HEADER — "cover sheet" band for interior pages
+   ========================================================= */
 .page-header {
-  background: #0b3c5d;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  border-bottom: 5px solid #328cc1;
+  background: var(--teal);
+  color: var(--paper);
+  text-align: left;
+  padding: 64px 2.5rem 54px;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+  background-size: 34px 34px;
+  background-position: center;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16,32,31,0.35), var(--teal) 85%);
+}
+
+.page-header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .page-header h1 {
-  font-size: 2.5rem;
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 2.9rem);
   margin-bottom: 10px;
 }
 
 .page-header p {
-  opacity: 0.9;
-  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: #b9d3d0;
+  opacity: 1;
 }
 
-/* =========================================
-   5. GENERAL LAYOUT
-   ========================================= */
+/* =========================================================
+   GENERAL LAYOUT
+   ========================================================= */
 .container {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 60px 2.5rem;
 }
 
-/* =========================================
-   6. ABOUT PAGE COMPONENTS
-   ========================================= */
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 50px 0;
+}
 
-/* Top Bio Section */
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
 .bio-section {
-  display: flex;
-  align-items: center; 
-  gap: 50px;
-  margin-bottom: 60px;
-  background: white; /* Ensures text is readable */
-  max-width: 1100px;
-   padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 60px;
+  margin-bottom: 20px;
+  background: transparent;
+  max-width: none;
+  padding: 0;
 }
 
-.bio-text, .bio-content {
-  flex: 1;
-}
+.bio-text, .bio-content { flex: 1; }
 
 .bio-text h2, .bio-content h2 {
-  color: #0b3c5d;
-  border-left: 15px solid #328cc1;
-  padding-left: 30px;
-  margin-bottom: 20px;
+  color: var(--ink);
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 22px;
+  font-size: 1.9rem;
 }
 
-/* Profile Image */
-.bio-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.bio-text p, .bio-content p {
+  margin-bottom: 18px;
 }
 
-.bio-image img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  border: 5px solid white;
-}
+.bio-image { display: none; } /* no headshot supplied; layout adapts */
+
+.bio-section .bio-text { grid-column: 1 / -1; max-width: 74ch; }
 
 /* Experience Box */
 .experience-box, .experience-highlight {
-  background: #eef4f8; /* Very light blue */
-  padding: 30px;
-  border-radius: 8px;
-  border: 1px solid #d1e3ef;
-  margin-bottom: 60px;
+  background: var(--white);
+  padding: 34px 36px;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--coral);
+  margin: 50px 0 60px;
 }
 
 .experience-box h3, .experience-highlight h3 {
-  color: #0b3c5d;
-  margin-bottom: 15px;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-size: 1.2rem;
 }
 
 .role-meta {
-  color: #666;
+  color: var(--blue);
   font-weight: 600;
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
 }
 
-/* =========================================
-   7. SKILLS SECTION
-   ========================================= */
+/* =========================================================
+   SKILLS SECTION
+   ========================================================= */
 .skills-section h3 {
-  color: #0b3c5d;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  text-align: center;
+  color: var(--ink);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 30px;
 }
 
 .skill-category {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: var(--white);
+  padding: 26px;
   text-align: left;
 }
 
 .skill-category h4 {
-  color: #328cc1;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
-.skill-category ul {
-  list-style: none;
-  padding: 0;
-}
+.skill-category ul { list-style: none; padding: 0; margin: 0; }
 
 .skill-category li {
   margin-bottom: 10px;
-  padding-left: 20px;
+  padding-left: 18px;
   position: relative;
+  font-size: 0.95rem;
 }
 
 .skill-category li::before {
-  content: "•";
-  color: #328cc1;
+  content: "—";
+  color: var(--coral);
   font-weight: bold;
   position: absolute;
   left: 0;
 }
 
-/* =========================================
-   8. COMPONENTS (Buttons, Footer)
-   ========================================= */
-.cta-group { margin-top: 30px; }
-
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s, background 0.3s;
-  margin: 0 10px;
-}
-
-.btn-primary { background-color: #ffffff; color: #0b3c5d; }
-.btn-primary:hover { background-color: #f0f0f0; transform: translateY(-3px); }
-
-.btn-outline { border: 2px solid white; color: white; }
-.btn-outline:hover { background-color: white; color: #0b3c5d; transform: translateY(-3px); }
-
-footer {
-  background: #062338;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  margin-top: 40px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================================
-   9. MOBILE RESPONSIVENESS
-   ========================================= */
-@media (max-width: 768px) {
-  /* Home */
-  .hero h1 { font-size: 2.5rem; }
-  
-  /* Nav */
-  nav.navbar { flex-direction: column; }
-  .nav-links { margin-top: 15px; }
-  .nav-links a { margin: 0 10px; font-size: 0.9rem; }
-  
-  /* Buttons */
-  .btn { display: block; margin: 10px auto; width: 80%; }
-  
-  /* About Page */
-  .bio-section {
-    flex-direction: column-reverse; /* Puts image on top on mobile */
-    text-align: center;
-  }
-  .bio-image img { max-width: 250px; }
-  .page-header h1 { font-size: 2rem; }
-}
-/* =========================================
-   ADD TO BOTTOM OF STYLE.CSS
-   ========================================= */
-
-/* --- CONTACT PAGE LAYOUT --- */
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 50px;
-  margin-top: 20px;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  margin-top: 10px;
 }
 
-/* --- LEFT COLUMN: INFO CARDS --- */
+.contact-info h2 { font-size: 1.7rem; }
+
 .contact-info p {
-  margin-bottom: 30px;
-  color: #666;
+  margin-bottom: 34px;
+  color: var(--graphite);
+  max-width: 42ch;
 }
 
 .info-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
-  border-left: 4px solid #328cc1;
+  background: var(--white);
+  padding: 22px 24px;
+  border-radius: 2px;
+  box-shadow: none;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
 }
 
 .info-label {
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   text-transform: uppercase;
-  color: #999;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .info-value {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #333;
+  color: var(--ink);
+  font-family: var(--font-display);
 }
 
-.info-value a {
-  color: #0b3c5d;
+.info-value a, .social-link {
+  color: var(--ink);
   text-decoration: none;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.info-value a:hover {
-  color: #328cc1;
-  text-decoration: underline;
-}
+.info-value a:hover, .social-link:hover { color: var(--coral); }
 
-/* --- RIGHT COLUMN: FORM --- */
 .contact-form-container {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  background: var(--white);
+  padding: 40px;
+  border-radius: 2px;
+  border: 1px solid var(--line);
 }
 
 .contact-form-container h2 {
-  color: #0b3c5d;
-  margin-bottom: 20px;
+  color: var(--ink);
+  margin-bottom: 24px;
+  font-size: 1.5rem;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
+.form-group { margin-bottom: 22px; }
 
 .form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #555;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-family: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-family: var(--font-body);
   font-size: 1rem;
-  transition: border-color 0.3s;
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color 0.2s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #328cc1;
-  box-shadow: 0 0 5px rgba(50, 140, 193, 0.2);
+  border-color: var(--coral);
 }
 
-.submit-btn {
-  width: 100%;
-  border: none;
-  background-color: #0b3c5d; /* Dark Blue */
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-}
+.submit-btn { width: 100%; justify-content: center; cursor: pointer; }
 
-.submit-btn:hover {
-  background-color: #328cc1; /* Lighter Blue on hover */
-  color: white;
-}
-
-/* --- RESPONSIVE CONTACT --- */
-@media (max-width: 768px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr; /* Stack columns on mobile */
-    gap: 30px;
-  }
-}
-
-/* =========================================
-   ADD TO BOTTOM OF STYLE.CSS (CV PAGE)
-   ========================================= */
-
-/* --- CV PREVIEW CARD --- */
+/* =========================================================
+   CV PAGE
+   ========================================================= */
 .cv-preview-card {
-  background: white;
-  max-width: 800px; /* Limits width for better reading */
-  margin: 0 auto;   /* Centers the card */
-  padding: 50px;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft shadow */
-  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 54px;
 }
 
-/* --- SUMMARY TEXT --- */
-.cv-summary {
-  margin-bottom: 40px;
-}
-
-.cv-summary h2 {
-  color: #0b3c5d;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
+.cv-summary h2 { font-size: 1.6rem; margin-bottom: 18px; }
 
 .cv-summary p {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.08rem;
+  color: var(--graphite);
   margin-bottom: 15px;
   line-height: 1.8;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 70ch;
 }
 
-/* --- DIVIDER --- */
-.divider {
-  border: 0;
-  height: 1px;
-  background: #e0e0e0;
-  margin: 40px 0;
-}
-
-/* --- HIGHLIGHTS GRID --- */
 .cv-highlights {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
   margin-bottom: 50px;
 }
 
 .highlight-item {
-  flex: 1;
-  min-width: 200px;
+  background: var(--white);
+  padding: 26px 22px;
 }
 
 .highlight-item i {
-  font-size: 2rem;
-  color: #328cc1;
-  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: var(--coral);
+  margin-bottom: 14px;
+  display: block;
 }
 
 .highlight-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-  color: #333;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  color: var(--blue);
 }
 
 .highlight-item p {
   font-weight: 700;
-  color: #0b3c5d;
-  margin-bottom: 0;
+  color: var(--ink);
+  margin-bottom: 2px;
+  font-family: var(--font-display);
 }
 
-.highlight-sub {
-  font-size: 0.9rem;
-  color: #777;
-}
+.highlight-sub { font-size: 0.85rem; color: #7a8480; }
 
-/* --- DOWNLOAD AREA --- */
 .cv-download-area {
-  background: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  border: 1px dashed #cbd5e0;
+  background: var(--paper);
+  padding: 34px;
+  border-radius: 2px;
+  border: 1px dashed #b7bdb2;
+  text-align: center;
 }
 
-.cv-download-area p {
-  margin-bottom: 20px;
-  color: #666;
-}
+.cv-download-area p { margin-bottom: 20px; color: var(--graphite); }
 
-.btn-large {
-  padding: 15px 40px;
-  font-size: 1.1rem;
-}
-
-/* --- RESPONSIVE CV --- */
-@media (max-width: 768px) {
-  .cv-preview-card {
-    padding: 30px 20px;
-  }
-  
-  .cv-highlights {
-    flex-direction: column;
-  }
-  
-  .cv-summary h2 {
-    font-size: 1.5rem;
-  }
-}
-
-/* =========================================
-   ADD TO BOTTOM OF STYLE.CSS (PROJECTS PAGE)
-   ========================================= */
-/* =======================================================
-   REPLACE EVERYTHING FROM "PROJECT CARD CONTAINER" DOWN
-   WITH THIS CODE. IT HANDLES BOTH PAGES.
-   ======================================================= */
-
-/* -------------------------------------------------------
-   1. SHARED CARD STYLES (Applies to both)
-   ------------------------------------------------------- */
+/* =========================================================
+   PROJECT / CAD CARDS
+   ========================================================= */
 .project-card, .cad-detailed-card {
-  background: white;
-  border-radius: 10px;
+  background: var(--white);
+  border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  margin-bottom: 60px;
-  border: 1px solid #eef4f8;
-  transition: transform 0.3s ease;
+  box-shadow: none;
+  margin-bottom: 46px;
+  border: 1px solid var(--line);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  position: relative;
 }
 
 .project-card:hover, .cad-detailed-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+  border-color: var(--ink);
 }
 
-/* Header Styles */
 .project-header {
-  padding: 25px;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -568,251 +680,268 @@ footer {
   gap: 15px;
 }
 
-.project-meta h2 { margin: 0; color: #0b3c5d; font-size: 1.5rem; }
-.project-type { display: block; font-size: 0.9rem; color: #777; margin-top: 5px; font-weight: 600; }
-
-/* Badges */
-.tech-stack { display: flex; gap: 8px; flex-wrap: wrap; }
-.badge {
-  background: #eef4f8; color: #0b3c5d; padding: 5px 12px;
-  border-radius: 20px; font-size: 0.8rem; font-weight: 700;
-  border: 1px solid #dae7f0;
+.project-meta { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.project-meta h2 { margin: 0 14px 0 0; color: var(--ink); font-size: 1.35rem; }
+.project-type {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 600;
 }
 
-/* -------------------------------------------------------
-   2. PROJECTS PAGE STYLES (Overlay Style)
-   ------------------------------------------------------- */
-/* The Grid */
+.tech-stack { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 5px 11px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  border: 1px solid var(--line);
+}
+
+/* --- Projects page: overlay gallery -------------------- */
 .project-card .project-visuals {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: #f0f0f0;
+  gap: 1px;
+  background: var(--line);
 }
 
-/* The Image Box */
 .project-card .visual-item {
-  position: relative; /* Allows caption to sit on top */
+  position: relative;
   height: 300px;
   overflow: hidden;
+  background: var(--paper);
 }
 
-/* The Image */
 .project-card .visual-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fills the box, cuts off edges if needed */
-  transition: transform 0.3s;
+  object-fit: cover;
+  transition: transform 0.4s ease;
   display: block;
 }
 
-.project-card .visual-item:hover img { transform: scale(1.05); }
+.project-card .visual-item:hover img { transform: scale(1.04); }
 
-/* The Caption (OVERLAY) */
 .project-card .caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 8px 15px;
-  font-size: 0.85rem;
+  background: rgba(16,32,31,0.85);
+  color: var(--paper);
+  padding: 9px 15px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
 
 .project-card .visual-item:hover .caption { opacity: 1; }
 
-/* Description Area */
-.project-desc { padding: 25px; }
-.project-desc h3 { font-size: 1.1rem; color: #333; margin-bottom: 10px; }
-.project-desc p { color: #555; margin-bottom: 20px; line-height: 1.6; }
-.btn-text { color: #328cc1; text-decoration: none; font-weight: bold; }
-
-/* -------------------------------------------------------
-   3. CAD MODELS PAGE STYLES (Technical Style)
-   ------------------------------------------------------- */
-/* --- 3.1 DETAILED CARD (Suction Pump & Centrifuge) --- */
-
-/* Flex Layout for CAD Card Wrapper */
-.cad-detailed-card {
-  display: flex;
-  flex-direction: column;
+.project-desc { padding: 26px 28px 28px; }
+.project-desc h3 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 12px;
 }
+.project-desc p { color: var(--graphite); margin-bottom: 20px; line-height: 1.7; }
 
-/* Grid Layout: Text Left, Images Right */
+/* --- CAD page: technical/datasheet gallery -------------- */
+.cad-detailed-card { display: flex; flex-direction: column; }
+
 .cad-content-grid {
   display: grid;
   grid-template-columns: 40% 60%;
   min-height: 500px;
 }
 
-/* Text Side */
-.cad-text {
-  padding: 40px;
-  background: white;
-  border-right: 1px solid #eee;
-}
+.cad-text { padding: 40px; background: var(--white); border-right: 1px solid var(--line); }
 
 .cad-text h3 {
-  font-size: 1.1rem; color: #0b3c5d; margin-top: 25px; margin-bottom: 15px;
-  border-bottom: 2px solid #eef4f8; padding-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 26px; margin-bottom: 15px;
+  border-bottom: 1px solid var(--paper-dim); padding-bottom: 9px;
 }
-.cad-text i { color: #328cc1; margin-right: 8px; }
+.cad-text i { color: var(--coral); margin-right: 8px; }
+.cad-text p { margin-bottom: 12px; }
 
-/* Specs List */
 .specs-list {
-  list-style: none; padding: 0; margin-bottom: 25px;
-  background: #fafafa; padding: 15px; border-radius: 6px; border: 1px solid #eee;
+  list-style: none; padding: 14px 16px; margin: 0 0 25px;
+  background: var(--paper); border-radius: 2px; border: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 0.85rem;
 }
 .specs-list li {
-  padding: 6px 0; border-bottom: 1px solid #ddd;
-  display: flex; justify-content: space-between; color: #555;
+  padding: 8px 0; border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; color: var(--graphite);
 }
 .specs-list li:last-child { border-bottom: none; }
+.specs-list li strong { color: var(--ink); font-weight: 600; }
 
-/* Material Rationale */
 .material-rationale {
-  background: #f0f7fb; border-left: 4px solid #328cc1;
-  padding: 15px; border-radius: 4px;
+  background: #eef4f1; border-left: 3px solid var(--blue);
+  padding: 16px 18px; border-radius: 2px;
 }
-.material-rationale strong { display: block; margin-bottom: 5px; color: #0b3c5d; }
+.material-rationale strong {
+  display: block; margin-bottom: 6px; color: var(--ink);
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
 
-/* CAD Gallery Grid */
 .cad-gallery {
-  background: #f4f4f4;
+  background: var(--paper-dim);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 10px;
-  padding: 10px;
+  gap: 1px;
+  padding: 0;
 }
 
-/* CAD Visual Item */
 .cad-gallery .visual-item {
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--white);
+  border: none;
   display: flex;
-  flex-direction: column; /* Forces caption BELOW image */
+  flex-direction: column;
   height: 100%;
   position: relative;
 }
 
-/* CAD Image */
 .cad-gallery .visual-item img,
-.cad-gallery .visual-item video { /* Added Video Support */
+.cad-gallery .visual-item video {
   width: 100%;
-  height: 300px; /* Fixed height */
-  object-fit: contain; /* Ensures whole drawing/video is visible */
-  background: #fff;
-  padding: 10px;
+  height: 300px;
+  object-fit: contain;
+  background: var(--white);
+  padding: 14px;
 }
 
-/* Smaller images in the bottom row */
 .cad-gallery .visual-item:not(.large-visual) img { height: 200px; }
 
-/* CAD Caption (BELOW IMAGE) */
 .cad-gallery .visual-item .caption {
   position: relative;
-  background: #fff;
-  color: #555;
-  padding: 10px;
-  font-size: 0.85rem;
-  text-align: center;
-  border-top: 1px solid #eee;
+  background: var(--white);
+  color: var(--graphite);
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-align: left;
+  border-top: 1px solid var(--paper-dim);
   width: 100%;
-  opacity: 1; /* Always visible */
+  opacity: 1;
 }
 
-/* Large Visual Span */
 .large-visual { grid-column: 1 / -1; grid-row: 1; }
 
-/* CAD Footer */
 .cad-footer {
-  background: #f9f9f9; padding: 15px 40px; border-top: 1px solid #eee;
-  font-size: 0.9rem; color: #666;
+  background: var(--paper);
+  padding: 16px 40px; border-top: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--graphite);
 }
+.cad-footer strong { color: var(--ink); }
 
-/* --- 3.2 COMPONENT REPOSITORY (New Compact Styles) --- */
-
-/* Section Title */
+/* --- Component repository ------------------------------- */
 .section-title {
-  color: #0b3c5d;
-  font-size: 1.8rem;
-  margin: 50px 0 30px 0;
-  border-left: 5px solid #328cc1;
-  padding-left: 15px;
+  color: var(--ink);
+  font-size: 1.5rem;
+  margin: 60px 0 30px 0;
+  border-left: none;
+  padding-left: 0;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
-/* Grid Wrapper for Compact Cards */
 .cad-grid-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 Columns */
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   margin-bottom: 60px;
 }
 
-/* The Compact Card Container */
 .cad-compact-card {
   display: flex;
   flex-direction: column;
-  background: white;
-  height: 100%; /* Ensures equal height in grid */
+  background: var(--white);
+  height: 100%;
 }
 
-/* Compact Gallery (Top Half) */
 .cad-gallery-compact {
-  background: #f4f4f4;
-  padding: 5px;
-  border-bottom: 1px solid #eee;
+  background: var(--paper-dim);
+  padding: 1px;
 }
 
 .cad-gallery-compact .main-img img {
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-  background: white;
-  margin-bottom: 5px;
-  border: 1px solid #ddd;
+  width: 100%; height: 240px; object-fit: contain;
+  background: var(--white); margin-bottom: 1px; border: none;
 }
 
-.sub-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-}
-
+.sub-images { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
 .sub-images .visual-item img {
-  width: 100%;
-  height: 150px; /* Smaller height for sub-images */
-  object-fit: contain;
-  background: white;
-  border: 1px solid #ddd;
+  width: 100%; height: 140px; object-fit: contain;
+  background: var(--white); border: none;
 }
 
-/* Compact Text (Bottom Half) */
-.cad-text-compact {
-  padding: 25px;
+.cad-text-compact { padding: 24px 26px; display: flex; flex-direction: column; flex-grow: 1; }
+.compact-header { margin-bottom: 14px; }
+.compact-header h3 { color: var(--ink); font-size: 1.15rem; margin-bottom: 10px; }
+.cad-text-compact p { color: var(--graphite); margin-bottom: 18px; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  background: var(--ink);
+  color: #8fa19d;
+  text-align: left;
+  padding: 30px 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Pushes button to bottom */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.compact-header { margin-bottom: 15px; }
-.compact-header h3 { color: #0b3c5d; font-size: 1.25rem; margin-bottom: 10px; }
+footer .footer-tag { letter-spacing: 0.05em; }
 
-/* -------------------------------------------------------
-   4. RESPONSIVE (Unified)
-   ------------------------------------------------------- */
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
 @media (max-width: 900px) {
-  /* Projects Page Mobile */
+  .hero-grid { grid-template-columns: 1fr; }
+  .bio-section { grid-template-columns: 1fr; }
+  .contact-wrapper { grid-template-columns: 1fr; }
+  .cad-content-grid { grid-template-columns: 1fr; }
+  .cad-text { border-right: none; border-bottom: 1px solid var(--line); }
+  .cad-grid-wrapper { grid-template-columns: 1fr; }
   .project-header { flex-direction: column; }
   .project-card .project-visuals { grid-template-columns: 1fr; }
-  .project-card .caption { opacity: 1; position: relative; background: #333; }
-  
-  /* CAD Detailed Card Mobile */
-  .cad-content-grid { grid-template-columns: 1fr; }
-  .cad-text { border-right: none; border-bottom: 1px solid #eee; }
-  
-  /* CAD Component Grid Mobile */
-  .cad-grid-wrapper { grid-template-columns: 1fr; } /* Stacks the holders vertically */
+  .project-card .caption { opacity: 1; position: relative; background: var(--ink); }
+  .cv-highlights { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 60px 1.4rem 50px; }
+  .hero h1, .hero-content h1 { font-size: 2.3rem; }
+  nav.navbar { flex-direction: column; gap: 14px; padding: 1rem 1.4rem; }
+  .nav-links { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+  .btn { display: block; width: 100%; text-align: center; justify-content: center; margin: 0 0 10px 0; }
+  .cta-group { flex-direction: column; }
+  .page-header { padding: 46px 1.4rem 40px; }
+  .container { padding: 40px 1.4rem; }
+  footer { flex-direction: column; align-items: flex-start; padding: 26px 1.4rem; }
 }

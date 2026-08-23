@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Safiu Benin</title>
-  
-  <!-- Google Fonts (Same as Home) -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation (Updated to match Home) -->
+  <!-- Navigation -->
   <nav class="navbar">
-    <div class="logo">SSBENIN</div>
+    <a href="index.html" class="logo"><span class="logo-mark">S</span>·B</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
@@ -25,53 +26,92 @@
     </div>
   </nav>
 
-  <!-- Page Header (New style, smaller than Hero) -->
+  <!-- Page Header -->
   <header class="page-header">
-    <h1>About Me</h1>
-    <p>Biomedical Engineer | Researcher | Innovator</p>
+    <div class="page-header-inner">
+      <h1>About Me</h1>
+      <p>Biomedical Engineer · Researcher · Innovator</p>
+    </div>
   </header>
 
-  <!-- Main Content (White background) -->
+  <!-- Main Content -->
   <main class="container">
-    
+
     <!-- Bio Section -->
     <section class="bio-section">
-      <!-- Text content -->
       <div class="bio-text">
+        <div class="eyebrow">Background</div>
         <h2>My Background</h2>
         <p>
           I am a Biomedical Engineering graduate specializing in artificial intelligence for healthcare, with a focus on developing data-driven solutions for medical imaging and diagnostic systems.
         </p>
-        
+
         <p>
-         My work centers on applying machine learning and deep learning techniques to tasks such as image segmentation, classification, and computer-aided diagnosis. I have led team research projects in breast cancer image analysis, where I integrated domain knowledge with model development, evaluation, and deployment to explore clinically relevant solutions.
-        <p>
-          
-        <p>
-         I am particularly interested in building interpretable and scalable AI systems that can support clinical decision-making, especially in resource-constrained healthcare environments. My broader goal is to translate advanced computational methods into practical tools that enhance diagnostic accuracy, accessibility, and efficiency.
+          My work centers on applying machine learning and deep learning techniques to tasks such as image segmentation, classification, and computer-aided diagnosis. I have led team research projects in breast cancer image analysis, where I integrated domain knowledge with model development, evaluation, and deployment to explore clinically relevant solutions.
         </p>
 
         <p>
-         Driven by a long-term vision of innovation and impact, I aim to contribute to the advancement of intelligent healthcare technologies through research, industry collaboration, and future entrepreneurial initiatives. 
-        <p>
+          I am particularly interested in building interpretable and scalable AI systems that can support clinical decision-making, especially in resource-constrained healthcare environments. My broader goal is to translate advanced computational methods into practical tools that enhance diagnostic accuracy, accessibility, and efficiency.
+        </p>
 
+        <p>
+          Driven by a long-term vision of innovation and impact, I aim to contribute to the advancement of intelligent healthcare technologies through research, industry collaboration, and future entrepreneurial initiatives.
+        </p>
       </div>
     </section>
 
     <!-- Current Role Box -->
     <section class="experience-box">
-      <h3>Current Role</h3>
-      <p><strong>National Service Personnel – Accra Psychiatric Hospital</strong></p>
+      <div class="role-meta">Current Role</div>
+      <h3>National Service Personnel — Accra Psychiatric Hospital</h3>
       <p>
         I am currently gaining exposure to clinical environments, healthcare systems, and biomedical equipment in a mental health setting. This experience is shaping my interest in technology-driven solutions for mental health care and clinical decision support.
       </p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+      <div class="eyebrow">Capabilities</div>
+      <h3>Skills &amp; Tools</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Machine Learning</h4>
+          <ul>
+            <li>Python (PyTorch / TensorFlow)</li>
+            <li>Medical Image Segmentation</li>
+            <li>Computer-Aided Diagnosis</li>
+            <li>Model Deployment</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Design &amp; CAD</h4>
+          <ul>
+            <li>SolidWorks</li>
+            <li>Fusion 360</li>
+            <li>Finite Element Analysis</li>
+            <li>3D Printing &amp; DFM</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Systems &amp; Hardware</h4>
+          <ul>
+            <li>Arduino / Embedded Systems</li>
+            <li>IoT &amp; Telemetry</li>
+            <li>Biomedical Equipment</li>
+            <li>Circuit Integration</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Safiu Sumani Benin. All rights reserved.</p>
+    <span>&copy; 2026 Safiu Sumani Benin — Accra, Ghana</span>
+    <span class="footer-tag">Biomedical Engineering / AI</span>
   </footer>
 
 </body>
